@@ -54,12 +54,9 @@ namespace Assets.Scripts.PlayerRemade.Services
             DetectClimbing();
 
 
-            if (!_isClimbing)
+            if (!animController.IsHoldingWall)
             {
-                if (currentVelocity.x != 0)
-                    animController.IsRunning = true;
-                else
-                    animController.IsRunning = false;
+                animController.IsRunning = currentVelocity.x != 0.0f;
 
                 if (_collisionInfo.below)
                 {
@@ -81,10 +78,19 @@ namespace Assets.Scripts.PlayerRemade.Services
 
         void OnClimbRotate(Transform playerTransform)
         {
-            if (animController.IsRunningBackwards && !_movementInfo.isClimbing)
+            if (_collisionInfo.right)
+            {
+                playerTransform.localScale = new Vector3(-Mathf.Abs(playerTransform.localScale.x), playerTransform.localScale.y, playerTransform.localScale.z);//If the player is holding a wall from right side - force rotation to right
+            }
+            else if(_collisionInfo.left)
+            {
+                playerTransform.localScale = new Vector3(Mathf.Abs(playerTransform.localScale.x), playerTransform.localScale.y, playerTransform.localScale.z);//If the player is holding a wall from left side - force rotation to left
+            }
+            /*if (animController.IsRunningBackwards)
             {
                 playerTransform.localScale = new Vector3(-playerTransform.localScale.x, playerTransform.localScale.y, playerTransform.localScale.z);
-            }
+                animController.IsRunningBackwards = false;
+            }*/
         }
         /// <summary>
         /// Determines whether does the character run towards the crosshair. If not, forces Backward Running
@@ -101,7 +107,7 @@ namespace Assets.Scripts.PlayerRemade.Services
             bool shouldRunBackwards = false;
 
             animController.NormalizeRunSpeed = Mathf.Abs(currentVelocity.x / maxVelocity.x);
-
+            
             if (currentVelocity.x > 0)
             {
                 if (sideOfCrosshair > 0)
@@ -133,19 +139,11 @@ namespace Assets.Scripts.PlayerRemade.Services
                     shouldRunBackwards = false;
                 }
             }
-
             playerTransform.localScale = new Vector3(rescaleX, playerTransform.localScale.y,
                 playerTransform.localScale.z);
+        
             SetIsRunningBackwards(shouldRunBackwards);
-            /*if (sideOfCrosshair > 0)
-            {
-                animController.NormalizeRunSpeed = -animController.NormalizeRunSpeed;
-                SetIsRunningBackwards(true);
-            }
-            else
-            {
-                SetIsRunningBackwards(false);
-            }*/
+
         }
        
 

@@ -121,7 +121,7 @@ namespace Assets.Scripts.PlayerRemade.Services
 
             if (IsClimbingWall() && !(collisions.below || collisions.above))
             {
-                ChkWallCollisions(ref timeScaledVelocity);
+                ChkWallCollisions(ref timeScaledVelocity);//TODO repair the x velocity when shift pressed bug in here
             }
 
             if (timeScaledVelocity.y != 0)
@@ -286,8 +286,8 @@ namespace Assets.Scripts.PlayerRemade.Services
             bool isStillClimbing = true;
             int notCollidingRaysCounter = 0;
             float directionX = (movement.holdsLeftWall) ? -1 : 1;
-            velocity.x = MaxClimbDistanceFromWall * directionX;
-            float rayLength = Mathf.Abs(velocity.x) + SkinWidth;
+            float distanceToWallMove = MaxClimbDistanceFromWall * directionX; //the max distance that the character can move towards the wall. //TODO distanceToWallMove was velocity.x
+            float rayLength = Mathf.Abs(distanceToWallMove) + SkinWidth;
 
             float smallestDistanceFromWall = MaxClimbDistanceFromWall;
 
@@ -311,28 +311,32 @@ namespace Assets.Scripts.PlayerRemade.Services
                     else
                         collisions.right = true;
 
+                    
+
                     if(hit.distance < smallestDistanceFromWall)
                     {
                         smallestDistanceFromWall = hit.distance;
+                        //velocity.x = distanceToWallMove;
                     }
                 }
             }
-            velocity.x = 0;
+
+            //velocity.x = 0;                                                                           //TODO this was uncommented. The only place here where that was.
             if (!isStillClimbing)
             {
                 movement.isClimbing = false;
-                // velocity.x = 0;
+                //velocity.x = 0;
             }
             else
             {
-                // velocity.x = 0;
+                velocity.x = 0;
                 if (movement.climbDown || movement.climbUp)
                     velocity = GetXInClimbing(rayHits, velocity);
 
                 ChkSmallestDistanceFromWall(smallestDistanceFromWall, ref velocity);
             }
-
-        
+            
+            //todo HE JUST KEEPS SPINNING NOW WHEN the crosshair is behind him at the moment of catching the wall
         }
         /// <summary>
         /// Checks whether is the character too close to the wall - this can cause jamming the character and other weird behaviour.
