@@ -1,0 +1,5 @@
+Make a script which upon switching to other animations would switch the sprite of the right foot and the torso
+-Right hand (from palm to elbow) needs to be rescaled (mirrored image towards X axis)
+
+-Przy przejœciu animacji z Ascend do Jump Peak ustawiæ isJumping na false (przed przejœciem) - ten parametr jest odpowiedzialny za powrót do stanu Ascend
+ ze stanów Descend oraz Jump Peak (przy doublejumpie, na przyk³ad)

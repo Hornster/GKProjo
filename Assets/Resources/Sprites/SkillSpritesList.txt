@@ -1,0 +1,11 @@
+//In order to register a sprite, put it's name (without extension, like .png or .jpg, just make sure that the file in fact is an graphics file) here. The sprites are loaded from up to down
+//if the sprite is inside a folder, add the name of the folder before the image and insert the character '/'
+//between the names. Using this rule, you can direct the game through many folders. The path shall begin from the inside
+//of the Resources folder.
+//examples:
+// ruyo/rSkill1
+// io/io skill sprites/ioSkill3
+//The '//' at the beggining of a line makes the line a comment, thus the game won't read the line.
+Sprites/Skills/ExampleSkills/ExampleSkill1
+Sprites/Skills/ExampleSkills/ExampleSkill2
+Sprites/Skills/ExampleSkills/ExampleSkill3
