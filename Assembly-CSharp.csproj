@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\PlayerRemade\Model\CollisionInfo.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Model\MovementInfo.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Model\RaycastOrigins.cs" />
+    <Compile Include="Assets\Scripts\PlayerRemade\Model\SkillsState.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\AnimationController.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\AnimationSupervisor.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\CameraWorks.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Skills\RuyoSkillTwo.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Skills\SkillFactoryRuyo.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Skills\SkillFactorySelector.cs" />
+    <Compile Include="Assets\Scripts\PlayerRemade\View\SkillsBarManager.cs" />
     <None Include="Assets\Resources\Sprites\SkillSpritesList.txt" />
     <None Include="Assets\Resources\Animations\Characters\Ruyo\About Ruyo animations.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">

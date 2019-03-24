@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.PlayerRemade.Contracts;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
+using Assets.Scripts.PlayerRemade.Services.Characters;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services
@@ -87,6 +88,27 @@ namespace Assets.Scripts.PlayerRemade.Services
             _directionVector = currentMousePos - tempDirection;
             _dirVectLength = _directionVector.magnitude;
             _directionVector /= _dirVectLength;
+        }
+        /// If skill not recognized - returns FALSE.
+        public bool ChkSkillActivationInput(SkillType skillType)
+        {
+            switch (skillType)
+            {
+                case SkillType.First:
+                    return RuyoInputReceiver.GetInstance().GetKeyDown(RuyoInputReceiver.FirstSkillKey);
+                case SkillType.Second:
+                    return RuyoInputReceiver.GetInstance().GetKeyDown(RuyoInputReceiver.SecondSkillKey);
+                case SkillType.Third:
+                    return RuyoInputReceiver.GetInstance().GetKeyDown(RuyoInputReceiver.ThirdSkillKey);
+
+                default:
+                    return false;
+            }
+        }
+
+        public bool IsShooting()
+        {
+            return RuyoInputReceiver.GetInstance().GetKey(RuyoInputReceiver.LeftMouseButton);
         }
 
         public void SetEntityVelocity(Vector2 velocity)

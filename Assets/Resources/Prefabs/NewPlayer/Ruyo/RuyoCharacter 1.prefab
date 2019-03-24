@@ -2785,6 +2785,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5733365305433270802}
   - component: {fileID: 5741669698623863308}
+  - component: {fileID: 346788654418831134}
   m_Layer: 0
   m_Name: SkillsBar
   m_TagString: Untagged
@@ -2827,6 +2828,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &346788654418831134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5515351370071387498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3447a191fdbe8df41b458b4d6c1a092e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillBckGndImg: {fileID: 5556114620522443914}
+  skill1Img: {fileID: 5554266857343698708}
+  skill2Img: {fileID: 5556030937525365658}
+  skill3Img: {fileID: 5556229881126420002}
 --- !u!1 &5515356976087006364
 GameObject:
   m_ObjectHideFlags: 0

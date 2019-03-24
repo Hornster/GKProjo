@@ -20,7 +20,15 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public float SkillCurrCD { get; set; }
         public Sprite SkillCrosshair { get; set; }
         public GameObject Projectile { get; set; }
+
+        public Sprite icon
+        {
+            get { return skillIcon; }
+        }
+
         public float SkillLifeTime { get; set; }
+        [SerializeField]
+        private Sprite skillIcon;
 
         /// <summary>
         /// The transform of the projectile launcher.

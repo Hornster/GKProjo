@@ -1,10 +1,12 @@
 ﻿using System;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
+using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Skills
 {
-    public class SkillFactorySelector : ISkillFactorySelector
+    [RequireComponent(typeof(SkillFactoryRuyo))]
+    public class SkillFactorySelector : MonoBehaviour, ISkillFactorySelector
     {
         public ISkillFactory SelectFactory(AvailableCharacters availableCharacter)
         {
@@ -12,10 +14,12 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             switch (availableCharacter)
             {
                 case AvailableCharacters.Ruyo:
-                    factory =  new SkillFactoryRuyo();
+                    factory =  GetComponent<SkillFactoryRuyo>();
                     break;
                 default:
-                    throw new NotImplementedException("Requested skill factory for passed character (" + availableCharacter.ToString() + ") was not implemented.");
+                    throw new NotImplementedException("Requested skill factory for passed character (" 
+                                                      + availableCharacter.ToString() 
+                                                      + ") was not implemented. If you think it was, however, then add the script to SkillFactory Selector's gameobject.");
             }
 
             return factory;

@@ -86,10 +86,11 @@ namespace Assets.Scripts.PlayerRemade.Services
             {
                 playerTransform.localScale = new Vector3(Mathf.Abs(playerTransform.localScale.x), playerTransform.localScale.y, playerTransform.localScale.z);//If the player is holding a wall from left side - force rotation to left
             }
+            animController.IsRunningBackwards = false;
             /*if (animController.IsRunningBackwards)
             {
                 playerTransform.localScale = new Vector3(-playerTransform.localScale.x, playerTransform.localScale.y, playerTransform.localScale.z);
-                animController.IsRunningBackwards = false;
+                
             }*/
         }
         /// <summary>

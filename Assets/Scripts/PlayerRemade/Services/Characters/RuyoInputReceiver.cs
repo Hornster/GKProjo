@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.PlayerRemade.Services.Characters
 {
+    /// <summary>
+    /// All KeyCodes are initialized upon calling GetInstance() method.
+    /// Thank C#4 xD
+    /// </summary>
     public class RuyoInputReceiver
     {
         #region Members
@@ -23,6 +28,10 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
 
         public static KeyCode JumpKey { get; private set; }
         public static KeyCode ClimbKey { get; private set; }
+        public static KeyCode FirstSkillKey { get; private set; }
+        public static KeyCode SecondSkillKey { get; private set; }
+        public static KeyCode ThirdSkillKey { get; private set; }
+        public static KeyCode LeftMouseButton { get; private set; }
 
         #endregion
         #region Ctors
@@ -31,6 +40,11 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
         {
             JumpKey = KeyCode.Space;
             ClimbKey = KeyCode.LeftShift;
+            FirstSkillKey = KeyCode.Alpha1;
+            SecondSkillKey = KeyCode.Alpha2;
+            ThirdSkillKey = KeyCode.Alpha3;
+
+            LeftMouseButton = KeyCode.Mouse0;
         }
 #endregion
         #region Functionalities

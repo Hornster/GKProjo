@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using Assets.Scripts.PlayerRemade.Contracts;
 using Assets.Scripts.PlayerRemade.Contracts.Characters;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
 using Assets.Scripts.PlayerRemade.Services.Characters;
 using Assets.Scripts.PlayerRemade.Services.Skills;
+using Assets.Scripts.PlayerRemade.View;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services
@@ -33,7 +35,6 @@ namespace Assets.Scripts.PlayerRemade.Services
         private ICharacter _myCharacter;
         private IDebuffManager _debuffManager = new DebuffManager();
         private SkillManager _skillManager = new SkillManager();
-        [SerializeField]
         private Crosshair _crosshair;
         [SerializeField]
         private CameraWorks _cameraWorks;
@@ -43,6 +44,9 @@ namespace Assets.Scripts.PlayerRemade.Services
         /// </summary>
         [SerializeField]
         private ICharacterFactory charFactory;
+
+        [SerializeField] private GameObject _factorySelectorPrefab;
+        private ISkillFactorySelector _skillFactorySelector;
         #endregion
 
         #region Functionalities
@@ -64,22 +68,46 @@ namespace Assets.Scripts.PlayerRemade.Services
             _controller2D = _myCharacter.CharacterInstance.GetComponentInChildren<IController2D>();
 
             _skillManager.AddObserver(_crosshair);
-            ISkillFactorySelector factorySelector = new SkillFactorySelector();
-            ISkillFactory skillFactory = factorySelector.SelectFactory(AvailableCharacters.Ruyo);
-
+            //Create the skills factory. Then retrieve the factory script and proper skill factory.
+            GameObject factorySelector = Instantiate(_factorySelectorPrefab);
+            _skillFactorySelector = factorySelector.GetComponent<ISkillFactorySelector>();
+            ISkillFactory skillFactory = _skillFactorySelector.SelectFactory(AvailableCharacters.Ruyo);
+            //Using the provided skill factory, generate the skills for the character.
             IGetTransform playerTransform = this;
             IGetTransform shotSpawnerTransform = _launcher;
-            skillFactory.CreateSkill(SkillType.Basic, ref shotSpawnerTransform, ref playerTransform);
+            //Create and assign the skills to the skills manager and save them temporarily for the
+            //skillBarManager.
+            IDictionary<SkillType, Sprite> skillsIcons = new Dictionary<SkillType, Sprite>();
+                //Basic skill:
+            ISkill newSkill = skillFactory.CreateSkill(SkillType.Basic, ref shotSpawnerTransform, ref playerTransform);
+            _skillManager.AddSkill(SkillType.Basic, newSkill);
+            //First active skill:
+            newSkill = skillFactory.CreateSkill(SkillType.First, ref shotSpawnerTransform, ref playerTransform);
+            _skillManager.AddSkill(SkillType.First, newSkill);
+            skillsIcons.Add(SkillType.First, newSkill.icon);
+            //Second active skill:
+            newSkill = skillFactory.CreateSkill(SkillType.Second, ref shotSpawnerTransform, ref playerTransform);
+            _skillManager.AddSkill(SkillType.Second,newSkill);
+            skillsIcons.Add(SkillType.First, newSkill.icon);
+            //Third active skill:
+            newSkill = skillFactory.CreateSkill(SkillType.Third, ref shotSpawnerTransform, ref playerTransform);
+            _skillManager.AddSkill(SkillType.Third, newSkill);
+            skillsIcons.Add(SkillType.First, newSkill.icon);
+
+            //Initialize the skillBarManager skill icons.
+            SkillsBarManager skillBarManager = _myCharacter.CharacterInstance.GetComponent<SkillsBarManager>();
+            skillBarManager.InitializeSkillsIcons(skillsIcons);
+
         }
         ///<summary>Called once per frame.</summary>
         //Check movement inputs             MovePlayer
         //Check collisions (Contorller2D)   MovePlayer
         //PrepareMove player                MovePlayer
-        //Check skills inputs
-        //Update skillManager
-        //Action on launcher, if necessary
-        //Actuate debuffs
-        //Update anims
+        //Check skills inputs               Launcher
+        //Update skillManager               _skillManager
+        //Action on launcher, if necessary  UseCurrentSkill
+        //Actuate debuffs                   TODO
+        //Update anims                      UpdateAnimations
         public void Update()
         {
             float lastFrameTime = Time.deltaTime;
@@ -87,13 +115,55 @@ namespace Assets.Scripts.PlayerRemade.Services
             //_controller2D.RotateClimbingCharacter(_currentVelocity);
             MovePlayer(lastFrameTime);
 
-            _myCharacter.UpdateAnimations(_currentVelocity, _crosshair.CrosshairPosition, new Vector2(_myCharacter.MoveSpeed, _myCharacter.JumpVelocity), transform);
+            ChkSkillsActivationChange();
+            _skillManager.UpdateSkillsState(lastFrameTime);
+
+            if (_launcher.IsShooting())
+            {
+                UseCurrentSkill();
+            }
+
+            _myCharacter.UpdateAnimations(_currentVelocity, _crosshair.CrosshairPosition, 
+                new Vector2(_myCharacter.MoveSpeed, _myCharacter.JumpVelocity), transform);
         }
         public bool ChkHit(IProjectile projectile)
         {
             throw new NotImplementedException();
         }
+        /// <summary>
+        /// Checks one single skill (if it was activated). If so, calls the _skillManager
+        /// to, if possible, change the activated skill.
+        /// </summary>
+        /// <param name="checkedSkillType">Type of currently checked skill.</param>
+        private void ChkSingleSkillActivation(SkillType checkedSkillType)
+        {
+            if (_launcher.ChkSkillActivationInput(checkedSkillType))
+            {
+                _skillManager.SelectSkill(checkedSkillType);
+            }
+        }
+        /// <summary>
+        /// Check if user activated/deactivated any of the active skills.
+        /// </summary>
+        private void ChkSkillsActivationChange()
+        {
+            //Check first skill
+            SkillType checkedSkillType = SkillType.First;
+            ChkSingleSkillActivation(checkedSkillType);
 
+            //Check second skill
+            checkedSkillType = SkillType.Second;
+            ChkSingleSkillActivation(checkedSkillType);
+
+            //Check third skill
+            checkedSkillType = SkillType.Third;
+            ChkSingleSkillActivation(checkedSkillType);
+        }
+        /// <summary>
+        /// Ensures movement of the player. Calls IController2D to check the collisions and input.
+        /// Checks raw input.
+        /// </summary>
+        /// <param name="lastFrameTime">The time it took to calculate through last frame.</param>
         private void MovePlayer(float lastFrameTime)
         {
             Vector2 input = RuyoInputReceiver.GetInstance().RetrieveInput();
@@ -101,7 +171,7 @@ namespace Assets.Scripts.PlayerRemade.Services
             
 
             _currentVelocity.x = Mathf.SmoothDamp(_currentVelocity.x, desiredSpeed, ref _storeVelocitySmoothing,
-                _myCharacter.AccelTimeGrounded);
+                _controller2D.Collisions.below? _myCharacter.AccelTimeGrounded : _myCharacter.AccelTimeAirborne);
             
 
             //Assign modified speed to another vector - we need to preserve the original, unaffected by time speed.
@@ -135,4 +205,7 @@ namespace Assets.Scripts.PlayerRemade.Services
 
 
     }
-}//TODO Modify new fields in character factory. Remember to call the SetGravity method (or whatever is it called)
+}
+
+//TODO assign scripts to projectile prefabs. Create Skills prefabs and assign skills to them.
+//TODO Find Waldo.

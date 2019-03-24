@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.PlayerRemade.Enums;
+﻿using System;
+using Assets.Scripts.PlayerRemade.Enums;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Contracts.Skills
@@ -40,6 +41,11 @@ namespace Assets.Scripts.PlayerRemade.Contracts.Skills
         /// Retrieves the gameobject containing the projectile of this skill. Can be NULL if none has been assigned.
         /// </summary>
         GameObject Projectile { get; }
+        /// <summary>
+        /// Icon assigned to this skill. Can be null.
+        /// </summary>
+        Sprite icon { get; }
+
         #endregion
 
         /// <summary>

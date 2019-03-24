@@ -24,6 +24,16 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public float SkillCurrCD { get; set; }
         public Sprite SkillCrosshair { get; set; }
         public GameObject Projectile { get; set; }
+        public Sprite icon
+        {
+            get
+            {
+                return skillIcon;
+            }
+        }
+
+        [SerializeField]
+        private Sprite skillIcon;
         #endregion
 
         public void UseSkill(Vector2 dirVector, Teams teamTag, Vector2 playerSpeed)
