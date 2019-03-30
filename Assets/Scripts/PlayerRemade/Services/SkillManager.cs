@@ -10,6 +10,7 @@ namespace Assets.Scripts.PlayerRemade.Services
 {
     /// <summary>
     /// Enables and disables skills, switches the crosshair graphics when skill is switched.
+    /// First added skill is set as currently active.
     /// Remember to use AddObserver and to add skills.
     /// </summary>
     public class SkillManager : IObservable<Sprite>, IObservable<SkillsState>
@@ -30,7 +31,7 @@ namespace Assets.Scripts.PlayerRemade.Services
         #region Functionalities
         /// <summary>
         /// Adds new skill to the skill manager. If skill is already present at passed key - does nothing.
-        /// Works as deselection of other skills.
+        /// Works as deselection of other skills. First added skill becomes the currentlySelected one.
         /// </summary>
         /// <param name="skillType">Type of the skill.</param>
         /// <param name="skill">The skill object itself.</param>
@@ -39,6 +40,11 @@ namespace Assets.Scripts.PlayerRemade.Services
             if (!_skills.ContainsKey(skillType))
             {
                 _skills.Add(skillType, skill);
+            }
+
+            if (_currentlyActiveSkill == null)
+            {
+                _currentlyActiveSkill = skill;
             }
         }
         /// <summary>

@@ -3,11 +3,10 @@ using UnityEngine.Networking;
 
 namespace Assets.Scripts
 {
-    public class ProjectileMover : NetworkBehaviour, IProjectileMover
+    public class ProjectileMover : MonoBehaviour, IProjectileMover
     {
         Rigidbody2D rb;
         public float velocity = 30;
-        [SyncVar]
         private Vector3 moveDirection;
         Vector3 playerVelocity;
     

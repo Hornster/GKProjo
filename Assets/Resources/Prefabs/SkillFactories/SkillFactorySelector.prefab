@@ -59,7 +59,11 @@ MonoBehaviour:
   Skill1Crosshair: {fileID: 21300000, guid: 7d0d7c3f42abe024f9e6924b678923cc, type: 3}
   Skill2Crosshair: {fileID: 21300000, guid: d6bcd7bce5ff42347884001777f89f15, type: 3}
   Skill3Crosshair: {fileID: 21300000, guid: 7d0d7c3f42abe024f9e6924b678923cc, type: 3}
-  Skill1Projectile: {fileID: 1781749487820268, guid: 306d64cf039fe0e49a7b74919a2d4830,
+  _skillBaseGameObject: {fileID: 5261014540926757295, guid: 926015dc3a6dee54c9273c10d7b76d8c,
     type: 3}
-  Skill2Projectile: {fileID: 1959857851080638, guid: 0daf1b46b8327084cb4b44d5687832e8,
+  _skill1GameObject: {fileID: 7664291158267439265, guid: ddc66fb59b9ce494d955a671633d98f9,
+    type: 3}
+  _skill2GameObject: {fileID: 4784470358202497001, guid: 00854bb4036881d4bae8c40b066cfe9c,
+    type: 3}
+  _skill3GameObject: {fileID: 7658010636297515363, guid: 7efceca38eabc8843b223f8b398b91f4,
     type: 3}

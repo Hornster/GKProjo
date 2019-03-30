@@ -16,9 +16,16 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public Sprite Skill1Crosshair;
         public Sprite Skill2Crosshair;
         public Sprite Skill3Crosshair;
+        
 
-        public GameObject Skill1Projectile;
-        public GameObject Skill2Projectile;
+        [SerializeField]
+        private GameObject _skillBaseGameObject;
+        [SerializeField]
+        private GameObject _skill1GameObject;
+        [SerializeField]
+        private GameObject _skill2GameObject;
+        [SerializeField]
+        private GameObject _skill3GameObject;
 
         //Cooldowns for the skills
         private const float basicSkillCD = 1.0f;
@@ -67,7 +74,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         /// <returns>Created skill.</returns>
         private ISkill CreateBasicSkill(ref IGetTransform shotSpawner)
         {
-            RuyoSkillBase newSkill = new RuyoSkillBase(ref shotSpawner);
+            GameObject projectile = Instantiate(_skillBaseGameObject);
+            RuyoSkillBase newSkill = projectile.GetComponentInChildren<RuyoSkillBase>();
 
             newSkill.IsActive = false;
             newSkill.SkillMaxCD = basicSkillCD;
@@ -75,7 +83,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.SkillLifeTime = basicProjectileLifeTime;
             newSkill.SkillCurrCD = basicSkillCD;
             newSkill.SkillCrosshair = Skill1Crosshair;
-            newSkill.Projectile = Skill1Projectile;
+            //newSkill.Projectile = _skill1Projectile;
             newSkill.skillType = SkillType.Basic;
 
             return newSkill;
@@ -86,7 +94,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         /// <returns>Created skill.</returns>
         private ISkill CreateSkillOne(ref IGetTransform shotSpawner)
         {
-            RuyoSkillBase newSkill = new RuyoSkillBase(ref shotSpawner);
+            GameObject skillInstance = Instantiate(_skill1GameObject);
+            RuyoSkillBase newSkill = skillInstance.GetComponentInChildren<RuyoSkillBase>();
 
             newSkill.IsActive = false;
             newSkill.SkillMaxCD  = Skill1CD;
@@ -94,7 +103,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.SkillLifeTime = basicProjectileLifeTime*lifeTimeFactor;
             newSkill.SkillCurrCD = Skill1CD;
             newSkill.SkillCrosshair = Skill1Crosshair;
-            newSkill.Projectile = Skill1Projectile;  
+            //newSkill.Projectile = _skill1Projectile;  
             newSkill.skillType = SkillType.First;
 
             return newSkill;
@@ -105,7 +114,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         /// <returns>Created skill.</returns>
         private ISkill CreateSkillTwo()
         {
-            RuyoSkillTwo newSkill = new RuyoSkillTwo();
+            GameObject skillInstance = Instantiate(_skill2GameObject);
+            RuyoSkillTwo newSkill = skillInstance.GetComponentInChildren<RuyoSkillTwo>();
 
             newSkill.IsActive = false;
             newSkill.SkillMaxCD = Skill2CD;
@@ -113,7 +123,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.SkillLifeTime = projectile2LifeTime;
             newSkill.SkillCurrCD = Skill2CD;
             newSkill.SkillCrosshair = Skill2Crosshair;
-            newSkill.Projectile = Skill2Projectile;
+            //newSkill.Projectile = _skill2Projectile;
             newSkill.LightningsCount = lightningNumber;
             newSkill.CrosshairBounds = Skill2Crosshair.bounds;
             newSkill.skillType = SkillType.Second;
@@ -126,7 +136,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         /// <returns>Created skill.</returns>
         private ISkill CreateSkillThree(ref IGetTransform skillOwnerTransform)
         {
-            RuyoSkillThree newSkill = new RuyoSkillThree();
+            GameObject skillInstance = Instantiate(_skill3GameObject);
+            RuyoSkillThree newSkill = skillInstance.GetComponentInChildren<RuyoSkillThree>();
 
             newSkill.IsActive = false;
             newSkill.SkillMaxCD = Skill3CD;

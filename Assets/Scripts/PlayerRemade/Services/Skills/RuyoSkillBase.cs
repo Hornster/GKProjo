@@ -48,6 +48,10 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         }
         #endregion
 
+        public void Start()
+        {
+
+        }
         public void UseSkill(Vector2 dirVector, Teams teamTag, Vector2 playerSpeed)
         {
             GameObject newProjectile;

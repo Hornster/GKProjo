@@ -61,7 +61,7 @@ namespace Assets.Scripts.PlayerRemade.Services
             //Make sure that the created character is positioned in the middle of the player gameobject.
             _myCharacter.CharacterInstance.transform.localPosition = Vector3.zero;  
             //Get the launcher from the character and store its script ref...
-            _launcher = _myCharacter.CharacterInstance.GetComponent<ILauncher>();
+            _launcher = _myCharacter.CharacterInstance.GetComponentInChildren<ILauncher>();
             //...same with the crosshair + setup the camera script.
             _crosshair = _myCharacter.CharacterInstance.GetComponentInChildren<Crosshair>();
             _crosshair.Begin(_cameraWorks);
@@ -88,15 +88,16 @@ namespace Assets.Scripts.PlayerRemade.Services
             //Second active skill:
             newSkill = skillFactory.CreateSkill(SkillType.Second, ref shotSpawnerTransform, ref playerTransform);
             _skillManager.AddSkill(SkillType.Second,newSkill);
-            skillsIcons.Add(SkillType.First, newSkill.icon);
+            skillsIcons.Add(SkillType.Second, newSkill.icon);
             //Third active skill:
             newSkill = skillFactory.CreateSkill(SkillType.Third, ref shotSpawnerTransform, ref playerTransform);
             _skillManager.AddSkill(SkillType.Third, newSkill);
-            skillsIcons.Add(SkillType.First, newSkill.icon);
+            skillsIcons.Add(SkillType.Third, newSkill.icon);
 
             //Initialize the skillBarManager skill icons.
-            SkillsBarManager skillBarManager = _myCharacter.CharacterInstance.GetComponent<SkillsBarManager>();
+            SkillsBarManager skillBarManager = _myCharacter.CharacterInstance.GetComponentInChildren<SkillsBarManager>();
             skillBarManager.InitializeSkillsIcons(skillsIcons);
+            _skillManager.AddObserver(skillBarManager);
 
         }
         ///<summary>Called once per frame.</summary>
