@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.PlayerRemade.Contracts;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
+using Assets.Scripts.PlayerRemade.Services.Projectiles;
 using UnityEngine;
 using ISkill = Assets.Scripts.PlayerRemade.Contracts.Skills.ISkill;
 
@@ -17,6 +18,13 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public Sprite Skill2Crosshair;
         public Sprite Skill3Crosshair;
         
+        [SerializeField]
+        private GameObject _skillBaseProjectile;
+        [SerializeField]
+        private GameObject _skill1Projectile;
+        [SerializeField]
+        private GameObject _skill2Projectile;
+
 
         [SerializeField]
         private GameObject _skillBaseGameObject;
@@ -28,21 +36,16 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         private GameObject _skill3GameObject;
 
         //Cooldowns for the skills
-        private const float basicSkillCD = 1.0f;
+        private const float basicSkillCD = 0.25f;
         private const float Skill1CD = 3.0f;
         private const float Skill2CD = 5.0f;
         private const float Skill3CD = 10.0f;
         private const float PassiveCD = 5.0f;
         //lifetimes, numbers of lightnings for the second skill
-        private const float projectile2LifeTime = 0.5f;
-        private const int lightningNumber = 12;
-        private const float basicProjectileLifeTime = 0.25f;
         private const float damageFactor = 2.0f;
-        private const float lifeTimeFactor = 1.5f;  //Used to extend the time the first skill projectile lives for
         private const float basicProjectileDmg = 3f;
         private const float Skill1ProjectileDmg = basicProjectileDmg* damageFactor;
-        private const float Skill2ProjectileDmg = 8f;
-        private const float Skill3Value = 750f;
+        private const float TeleportationRange = 10;
         
         public ISkill CreateSkill(SkillType skillID, ref IGetTransform shotSpawner, ref IGetTransform skillOwnerTransform)
         {
@@ -80,11 +83,11 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.IsActive = false;
             newSkill.SkillMaxCD = basicSkillCD;
             newSkill.SkillValue = basicProjectileDmg;
-            newSkill.SkillLifeTime = basicProjectileLifeTime;
             newSkill.SkillCurrCD = basicSkillCD;
             newSkill.SkillCrosshair = Skill1Crosshair;
-            //newSkill.Projectile = _skill1Projectile;
+            newSkill.Projectile = _skillBaseProjectile;
             newSkill.skillType = SkillType.Basic;
+            newSkill.shotSpawner = shotSpawner;
 
             return newSkill;
         }
@@ -100,11 +103,11 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.IsActive = false;
             newSkill.SkillMaxCD  = Skill1CD;
             newSkill.SkillValue = Skill1ProjectileDmg;
-            newSkill.SkillLifeTime = basicProjectileLifeTime*lifeTimeFactor;
             newSkill.SkillCurrCD = Skill1CD;
             newSkill.SkillCrosshair = Skill1Crosshair;
-            //newSkill.Projectile = _skill1Projectile;  
+            newSkill.Projectile = _skill1Projectile;  
             newSkill.skillType = SkillType.First;
+            newSkill.shotSpawner = shotSpawner;
 
             return newSkill;
         }
@@ -119,14 +122,17 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
 
             newSkill.IsActive = false;
             newSkill.SkillMaxCD = Skill2CD;
-            newSkill.SkillValue = Skill2ProjectileDmg;
-            newSkill.SkillLifeTime = projectile2LifeTime;
             newSkill.SkillCurrCD = Skill2CD;
             newSkill.SkillCrosshair = Skill2Crosshair;
-            //newSkill.Projectile = _skill2Projectile;
-            newSkill.LightningsCount = lightningNumber;
+            newSkill.Projectile = _skill2Projectile;
             newSkill.CrosshairBounds = Skill2Crosshair.bounds;
             newSkill.skillType = SkillType.Second;
+
+            RuyoProjectile2Data newSkillData = newSkill.Projectile.GetComponentInChildren<RuyoProjectile2Data>();
+            RuyoProjectile2Anim newSkillAnim = newSkill.Projectile.GetComponentInChildren<RuyoProjectile2Anim>();
+
+            newSkillData.Initialize();
+            newSkillAnim.Initialize();
 
             return newSkill;
         }
@@ -141,13 +147,13 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
 
             newSkill.IsActive = false;
             newSkill.SkillMaxCD = Skill3CD;
-            newSkill.SkillValue = Skill3Value;
             newSkill.SkillLifeTime = 0.0f;  //teleportation is instant
             newSkill.SkillCurrCD = Skill3CD;
             newSkill.SkillCrosshair = Skill3Crosshair;
             newSkill.Projectile = null;   //No projectile for teleportation
             newSkill.PlayerTransform = skillOwnerTransform;
             newSkill.skillType = SkillType.Third;
+            newSkill.TeleportRange = TeleportationRange;
 
             return newSkill;
         }

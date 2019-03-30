@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 212536087697443648}
   - component: {fileID: 58644888379395056}
   - component: {fileID: 50371606733689444}
+  - component: {fileID: 4955008544042176590}
+  - component: {fileID: 8738303713222904407}
+  - component: {fileID: 6235948165392497576}
+  - component: {fileID: 5656130095992326663}
   m_Layer: 0
   m_Name: RuyoSkill1Projectile
   m_TagString: proj
@@ -118,3 +122,58 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &4955008544042176590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781749487820268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445ad668aa491994193ee35154ebb1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8738303713222904407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781749487820268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75112d697fe8be4449434c3874387240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 40
+--- !u!114 &6235948165392497576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781749487820268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd68b4fbd0e93c44bb53374a513d036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Damage>k__BackingField: 25
+  <Alignment>k__BackingField: 0
+  <HasItsOwnLifeTimer>k__BackingField: 1
+  <IsTimed>k__BackingField: 0
+  <SkillDuration>k__BackingField: 2.5
+  <CanPenetrate>k__BackingField: 0
+--- !u!114 &5656130095992326663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781749487820268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417b01b1b5c295142a851e47047ca467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -9,10 +9,6 @@ namespace Assets.Scripts.PlayerRemade.Contracts.Skills
 
         #region Members
         SkillType skillType { get; }
-        /// <summary>
-        /// Value assigned to this skill, for example amount of damage or teleportation distance
-        /// </summary>
-        float SkillValue { get; }
         ///<summary>Returns true if the skill is recharged and can be used again. </summary>
         bool IsRecharged { get; }
 

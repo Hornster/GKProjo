@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
-    public abstract class ProjectileData : MonoBehaviour {
+    public class ProjectileData : MonoBehaviour {
 
         public bool isLoaded = false;
         public bool hasItsOwnLifeTimer;
@@ -11,7 +11,10 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
         public float clusterOffset;
         public float clusterLastingTime;
 
-        abstract public void Start();
+        public virtual void Start()
+        {
+
+        }
     }
 }
 //TODo

@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 50900381418797300}
   - component: {fileID: 61495374876928674}
   - component: {fileID: 3899535166283219074}
+  - component: {fileID: 2425815213786003706}
+  - component: {fileID: 8883201985498215286}
+  - component: {fileID: 4051445973886357362}
   m_Layer: 0
   m_Name: RuyoSkill2Projectile
   m_TagString: proj
@@ -141,5 +144,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2374314e7a0ae4a9b3119f28504006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projData: {fileID: 8883201985498215286}
   myLightning: {fileID: 1651609209868686, guid: f97546167e7f4164cb6e350cb70f1d32,
     type: 3}
+--- !u!114 &2425815213786003706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959857851080638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445ad668aa491994193ee35154ebb1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8883201985498215286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959857851080638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2502646185e836d49bf6fda30cfa80a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Damage>k__BackingField: 25
+  <Alignment>k__BackingField: 0
+  <HasItsOwnLifeTimer>k__BackingField: 1
+  <IsTimed>k__BackingField: 0
+  <SkillDuration>k__BackingField: 2
+  <CanPenetrate>k__BackingField: 1
+  <ClustersAmount>k__BackingField: 8
+--- !u!114 &4051445973886357362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959857851080638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417b01b1b5c295142a851e47047ca467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

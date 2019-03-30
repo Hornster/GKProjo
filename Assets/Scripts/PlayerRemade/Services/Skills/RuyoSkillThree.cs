@@ -46,9 +46,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         ///<param name="dirVector"> The teleportation direction vector.</param>
         private Vector2 GetTeleportCoords(Vector2 dirVector)
         {
-            double angle = dirVector.y / dirVector.y;
-            dirVector.x *= (float)(System.Math.Sin(angle) * TeleportRange);
-            dirVector.y *= (float)(System.Math.Cos(angle) * TeleportRange);
+            dirVector.Normalize();
+            dirVector *= TeleportRange;
             return dirVector;
         }
         /// <summary>
@@ -72,7 +71,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public void UpdateSkillCD(float lastFrameTime)
         {
             SkillCurrCD += lastFrameTime;
-            if (SkillMaxCD >= SkillCurrCD)
+            if (SkillMaxCD <= SkillCurrCD)
             {
                 IsRecharged = true;
             }

@@ -1,23 +1,48 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.PlayerRemade.Contracts;
+using Assets.Scripts.PlayerRemade.Contracts.Skills;
+using Assets.Scripts.PlayerRemade.Enums;
+using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
-    public class RuyoProjectile2Data : ProjectileData {
+   // public class RuyoProjectile2Data : ProjectileData {
         /// <summary>
-        /// The Start method has to be called before any meanings of reading the data from this class.
+        /// Data for the projectile of the second skill.
+        /// The Initialize() method has to be called before any meanings of reading the data from this class.
         /// </summary>
         //
-    
-        override public void Start()
+    public class RuyoProjectile2Data : MonoBehaviour, IProjectile
+    {
+        [field: SerializeField]
+        public float Damage { get; set; }
+        [field: SerializeField]
+        public Teams Alignment { get; set; }
+        [field: SerializeField]
+        public bool HasItsOwnLifeTimer { get; set; }
+        [field: SerializeField]
+        public bool IsTimed { get; set; }
+        [field: SerializeField]
+        public float SkillDuration { get; set; }
+        [field: SerializeField]
+        public bool CanPenetrate { get; set; }
+        [field: SerializeField]
+        public int ClustersAmount { get; set; }
+        public IDebuff AssignedDebuff { get; set; }
+
+        [HideInInspector]
+        public float ClusterOffset { get; set; }
+        [HideInInspector]
+        public float ClusterLastingTime { get; set; }
+
+        public void Initialize()
         {
             Transform AOESprite = GetComponent<Transform>();
         
-            clustersAmount = 8;
-            clusterOffset = GetComponent<SpriteRenderer>().sprite.bounds.size.x / clustersAmount ;
-            skillDuration = 0.5f;
-            hasItsOwnLifeTimer = true;
-            clusterLastingTime = skillDuration / (clustersAmount / 2);
-            isLoaded = true;
+            //ClustersAmount = 8;
+            ClusterOffset = GetComponent<SpriteRenderer>().sprite.bounds.size.x / ClustersAmount ;
+            //SkillDuration = 0.5f;
+            //HasItsOwnLifeTimer = true;
+            ClusterLastingTime = SkillDuration / (ClustersAmount / 2.0f);
             //effectType = Data.effects.RUYODMGBOOST;
         }
     }

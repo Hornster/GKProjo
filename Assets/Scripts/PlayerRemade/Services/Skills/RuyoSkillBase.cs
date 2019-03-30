@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Services.Skills
 {
     ///
-    class RuyoSkillBase : MonoBehaviour, IDefaultSkill, ITimedSkill
+    class RuyoSkillBase : MonoBehaviour, IDefaultSkill
     {
         #region Members
 
@@ -25,15 +25,14 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         {
             get { return skillIcon; }
         }
-
-        public float SkillLifeTime { get; set; }
+        
         [SerializeField]
         private Sprite skillIcon;
 
         /// <summary>
         /// The transform of the projectile launcher.
         /// </summary>
-        private IGetTransform shotSpawner;
+        public IGetTransform shotSpawner { get; set; }
         #endregion
 
         #region Ctors
@@ -58,18 +57,19 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
 
             newProjectile = Instantiate(Projectile, shotSpawner.GetTransform().position, Quaternion.identity) as GameObject;
 
-            Projectiles.OnCollisionProjectile onCollision = newProjectile.GetComponent<Projectiles.OnCollisionProjectile>();
+            OnCollisionProjectile onCollision = newProjectile.GetComponent<OnCollisionProjectile>();
             onCollision.SetParams(teamTag);
 
             DestroyByTime destroyByTime = newProjectile.GetComponent<DestroyByTime>();
-            destroyByTime.SetLifeTime(SkillLifeTime);
+            RuyoProjectileBasicData projData = newProjectile.GetComponent<RuyoProjectileBasicData>();
+            destroyByTime.SetLifeTime(projData.SkillDuration);
 
 
             IProjectileMover mover = newProjectile.GetComponent<ProjectileMover>();
             mover.Initialize();
             mover.SetMoveDirection(dirVector, playerSpeed);
 
-            Instantiate(newProjectile);
+            //Instantiate(newProjectile);
 
             StartSkillCD();
         }
@@ -90,7 +90,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public void UpdateSkillCD(float lastFrameTime)
         {
             SkillCurrCD += lastFrameTime;
-            if (SkillMaxCD >= SkillCurrCD)
+            if (SkillMaxCD <= SkillCurrCD)
             {
                 IsRecharged = true;
             }

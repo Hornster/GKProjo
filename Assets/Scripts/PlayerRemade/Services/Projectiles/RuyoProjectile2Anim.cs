@@ -5,24 +5,27 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
     public class RuyoProjectile2Anim : MonoBehaviour {
         /// <summary>
-        /// The lightnings are spawned 2 at once, beggining from the sides and comming to the middle.
+        /// The lightnings are spawned 2 at once, begining from the sides and comming to the middle.
+        /// Remember to call Initialize method before using.
         /// </summary>
         ///
         #region Members
+        [SerializeField]
         //the data of the projectile
-        ProjectileData projData;
+        private RuyoProjectile2Data projData;
         //a queue that stores the lightnings during the animation
         Queue<GameObject> lightnings;
+        [SerializeField]
         //the lightning game object used for the duration of the attack
-        public GameObject myLightning;
+        private GameObject myLightning;
         //the sprite of the area of effect
         Transform AOESprite;
-        //amount of time the skill should last
+        //Total duration time of the skill
+        private float duration;
+        //amount of time one lightning lasts.
         float lastingTime;
         //the amount of lightnings that will be creatred
         int lightningsAmount;
-        //the duration of the skill
-        float duration;
         //the distance between the lightnings
         float lightningsOffset;
         //the timer which will help with spawning the lightnings
@@ -31,28 +34,18 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 
         #region Functionalities
         // Use this for initialization
-        void Start () {
-            projData = GetComponent<RuyoProjectile2Data>();
+        public void Initialize () {
             AOESprite = GetComponent<Transform>();
             lightnings = new Queue<GameObject>();
 
-            if(!projData.isLoaded)
-                projData.Start();
-
-            lightningsAmount = projData.clustersAmount;
-            duration = projData.skillDuration;
-            lightningsOffset = projData.clusterOffset;
-            lastingTime = projData.clusterLastingTime;
-        }
-        //called in order to set up the lightnings amount. Requires amount of lightnings, offset between two near lightnings and the duration of whole animation
-        public void SetLightningsAmount(float offset, float duration)
-        {
-            //lightningsOffset = offset;
-            // lastingTime = duration/(lightningsAmount/2);
+            lightningsAmount = projData.ClustersAmount;
+            duration = projData.SkillDuration;
+            lightningsOffset = projData.ClusterOffset;
+            lastingTime = projData.ClusterLastingTime;
         }
 	
         // Update is called once per frame
-        void Update () {
+        public void Update () {
             if (lightningsAmount > 0)
             {
                 if (lightnings.Count == 0)

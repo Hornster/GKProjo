@@ -3,7 +3,7 @@ using UnityEngine.Networking;
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
-    public class DestroyByTime : NetworkBehaviour
+    public class DestroyByTime : MonoBehaviour
     {
         float lifetime;
         float lifeCount;
@@ -21,16 +21,14 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
         }
         // Update is called once per frame
         void Update () {
-            if(isServer)
-                if (isReady)
+            if (isReady)
+            {
+                lifeCount += Time.deltaTime;
+                if (lifeCount > lifetime)
                 {
-                    lifeCount += Time.deltaTime;
-                    if (lifeCount > lifetime)
-                    {
-                        NetworkServer.UnSpawn(this.gameObject);
-                        Destroy(this.gameObject);
-                    }
+                    Destroy(this.gameObject);
                 }
+            }
         }
     }
 }

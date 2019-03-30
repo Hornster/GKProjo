@@ -118,6 +118,8 @@ namespace Assets.Scripts.PlayerRemade.Services
 
             ChkSkillsActivationChange();
             _skillManager.UpdateSkillsState(lastFrameTime);
+            
+            _launcher.UpdateMousePosition(_crosshair.CrosshairPosition);
 
             if (_launcher.IsShooting())
             {

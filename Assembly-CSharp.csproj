@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Projectiles\ProjectileMover.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Projectiles\RuyoProjectile2Anim.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Projectiles\RuyoProjectile2Data.cs" />
+    <Compile Include="Assets\Scripts\PlayerRemade\Services\Projectiles\RuyoProjectileBasicData.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\RuyoLauncher.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\SkillManager.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Skills\RuyoDmgDebuff.cs" />

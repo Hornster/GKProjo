@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Skills
 {
-    class RuyoSkillTwo : MonoBehaviour, ISkill, ITimedSkill
+    class RuyoSkillTwo : MonoBehaviour, ISkill
     {
         #region Members
         ///<summary>The amount of lightnings of this skill.</summary>
@@ -13,11 +13,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         ///<summary>The bounds of the crosshair connected with this skill.
         ///Necessary for the calculation of the lightnings' offset.</summary>
         public Bounds CrosshairBounds { get; set; }
-
-        public int LightningsCount { get; set; }
-        public float SkillLifeTime { get; set; }
+        
         public SkillType skillType { get; set; }
-        public float SkillValue { get; set; }
         public bool IsRecharged { get; set; }
         public bool IsActive { get; set; }
         public float SkillMaxCD { get; set; }
@@ -50,10 +47,9 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             onCollision.SetParams(teamTag);
 
             var destroyByTime = newProjectile.GetComponent<Projectiles.DestroyByTime>();
-            destroyByTime.SetLifeTime(SkillLifeTime);
-
-            var proj2 = newProjectile.GetComponent<RuyoProjectile2Anim>();
-            proj2.SetLightningsAmount(lightningsOffset, SkillLifeTime);
+            var projData = newProjectile.GetComponent<RuyoProjectile2Data>();
+            destroyByTime.SetLifeTime(projData.SkillDuration);
+            
 
             StartSkillCD();
         }
@@ -84,7 +80,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public void UpdateSkillCD(float lastFrameTime)
         {
             SkillCurrCD += lastFrameTime;
-            if (SkillMaxCD >= SkillCurrCD)
+            if (SkillMaxCD <= SkillCurrCD)
             {
                 IsRecharged = true;
             }

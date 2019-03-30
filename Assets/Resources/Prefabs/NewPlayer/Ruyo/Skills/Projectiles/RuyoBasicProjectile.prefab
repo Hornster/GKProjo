@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 58000011138995092}
   - component: {fileID: 50000012699653016}
   - component: {fileID: 420652686010921729}
+  - component: {fileID: 7323642295042307850}
+  - component: {fileID: 9065757601869210290}
+  - component: {fileID: 6354030746993918095}
   m_Layer: 0
   m_Name: RuyoBasicProjectile
   m_TagString: proj
@@ -132,3 +135,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 30
+--- !u!114 &7323642295042307850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014030913868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445ad668aa491994193ee35154ebb1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9065757601869210290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014030913868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd68b4fbd0e93c44bb53374a513d036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Damage>k__BackingField: 10
+  <Alignment>k__BackingField: 0
+  <HasItsOwnLifeTimer>k__BackingField: 1
+  <IsTimed>k__BackingField: 0
+  <SkillDuration>k__BackingField: 2
+  <CanPenetrate>k__BackingField: 0
+--- !u!114 &6354030746993918095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014030913868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417b01b1b5c295142a851e47047ca467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

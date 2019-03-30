@@ -21,10 +21,8 @@ namespace Assets.Scripts.PlayerRemade.Services
         private IObserver<Sprite> _crosshair;
         private IObserver<SkillsState> _skillsBarManager;
         
-        public bool IsCurrentSkillReady
-        {
-            get { return _currentlyActiveSkill.IsRecharged; }
-        }
+        public bool IsCurrentSkillReady => _currentlyActiveSkill.IsRecharged;
+
         #endregion
         
 
@@ -104,8 +102,15 @@ namespace Assets.Scripts.PlayerRemade.Services
                     return;//If the skill is not base one andis not rechared - do not switch it
                 }
             }
-
-            SwapActiveSkill(selectedSkill);
+            //If user selected currently selected skill...
+            if (_currentlyActiveSkill.skillType == skillType)
+            {
+                ResetToBaseSkill(); //...we treat that as deselecting the skill. Reset to base one
+            }
+            else
+            {
+                SwapActiveSkill(selectedSkill);//...Otherwise - select provided skill.
+            }
         }
         /// <summary>
         /// Gets the currently selected skill, then deactivates it and switches to
@@ -116,7 +121,6 @@ namespace Assets.Scripts.PlayerRemade.Services
         {
             ISkill usedSkill = _currentlyActiveSkill;
             
-            _currentlyActiveSkill = null;
             ResetToBaseSkill();
 
             return usedSkill;
@@ -143,6 +147,7 @@ namespace Assets.Scripts.PlayerRemade.Services
             foreach (var skill in _skills.Values)
             {
                 skillsState.AddSkillCooldown(skill.skillType, skill.SkillCurrCD, skill.SkillMaxCD);
+                Debug.Log("Skill " + skill.skillType + " has CD of " + skill.SkillCurrCD);
             }
 
             skillsState.currentlyActiveSkill = _currentlyActiveSkill.skillType;

@@ -5,11 +5,12 @@ namespace Assets.Scripts
 {
     public class ProjectileMover : MonoBehaviour, IProjectileMover
     {
+        private bool _isMoving = false;
         Rigidbody2D rb;
         public float velocity = 30;
         private Vector3 moveDirection;
         Vector3 playerVelocity;
-    
+        
         // Use this for initialization
    
         public void Initialize ()

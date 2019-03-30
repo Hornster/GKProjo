@@ -6,8 +6,6 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
     public class OnCollisionProjectile : MonoBehaviour {
         IProjectile projectile;
-        //stores the data about the projectile
-        public ProjectileData projData;
         
         //how many damage (or healing) points carries the projectile
         float dmg;
