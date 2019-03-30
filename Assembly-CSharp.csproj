@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Controller2D.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Crosshair.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\DebuffManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerRemade\Services\OnCollisionGround.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Projectiles\DestroyByTime.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Projectiles\OnCollisionProjectile.cs" />

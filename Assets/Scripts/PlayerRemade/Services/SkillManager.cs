@@ -147,7 +147,6 @@ namespace Assets.Scripts.PlayerRemade.Services
             foreach (var skill in _skills.Values)
             {
                 skillsState.AddSkillCooldown(skill.skillType, skill.SkillCurrCD, skill.SkillMaxCD);
-                Debug.Log("Skill " + skill.skillType + " has CD of " + skill.SkillCurrCD);
             }
 
             skillsState.currentlyActiveSkill = _currentlyActiveSkill.skillType;

@@ -163,7 +163,7 @@ MonoBehaviour:
   <Alignment>k__BackingField: 0
   <HasItsOwnLifeTimer>k__BackingField: 1
   <IsTimed>k__BackingField: 0
-  <SkillDuration>k__BackingField: 2.5
+  <SkillDuration>k__BackingField: 1
   <CanPenetrate>k__BackingField: 0
 --- !u!114 &5656130095992326663
 MonoBehaviour:

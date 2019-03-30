@@ -8,8 +8,6 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
     class RuyoSkillTwo : MonoBehaviour, ISkill
     {
         #region Members
-        ///<summary>The amount of lightnings of this skill.</summary>
-        private int lightningsCount { get; set; }
         ///<summary>The bounds of the crosshair connected with this skill.
         ///Necessary for the calculation of the lightnings' offset.</summary>
         public Bounds CrosshairBounds { get; set; }
@@ -36,8 +34,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public void UseSkill(Vector2 dirVector, Teams teamTag, Vector2 playerSpeed)
         {
             GameObject newProjectile;
-
-            float lightningsOffset = CrosshairBounds.size.x / lightningsCount;
+            
 
             //let the projectile itself spawn the lightnings on it's own.
             //dirVector, in this case, is the position on the client's screen.
@@ -48,8 +45,10 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
 
             var destroyByTime = newProjectile.GetComponent<Projectiles.DestroyByTime>();
             var projData = newProjectile.GetComponent<RuyoProjectile2Data>();
+            var projAnim = newProjectile.GetComponent<RuyoProjectile2Anim>();
             destroyByTime.SetLifeTime(projData.SkillDuration);
-            
+            projData.Initialize();
+            projAnim.Initialize();
 
             StartSkillCD();
         }

@@ -23,6 +23,15 @@ namespace Assets.Scripts.PlayerRemade.View
         //stores a reference to the image of the third skill
         [SerializeField]
         private Image skill3Img;
+        //stores a reference to the border around the skill 1 icon.
+        [SerializeField]
+        private Image skill1ActivationMarker;
+        //stores a reference to the border around the skill 2 icon.
+        [SerializeField]
+        private Image skill2ActivationMarker;
+        //stores a reference to the border around the skill 3 icon.
+        [SerializeField]
+        private Image skill3ActivationMarker;
         #endregion Members
 
         #region Functionalities
@@ -49,14 +58,29 @@ namespace Assets.Scripts.PlayerRemade.View
                 }
             }
         }
+
+        public void Start()
+        {
+            skill1Img.type = Image.Type.Filled;
+            skill2Img.type = Image.Type.Filled;
+            skill3Img.type = Image.Type.Filled;
+
+            skill1Img.fillMethod = Image.FillMethod.Radial360;
+            skill2Img.fillMethod = Image.FillMethod.Radial360;
+            skill3Img.fillMethod = Image.FillMethod.Radial360;
+
+            skill1Img.fillClockwise = true;
+            skill2Img.fillClockwise = true;
+            skill3Img.fillClockwise = true;
+        }
         /// <summary>
         /// Resets the color of all skills to white, making all of the skills seem to be not selected.
         /// </summary>
         private void ResetSkillsMarks()
         {
-            skill1Img.color = Color.white;
-            skill2Img.color = Color.white;
-            skill3Img.color = Color.white;
+            skill1ActivationMarker.color = Color.clear;
+            skill2ActivationMarker.color = Color.clear;
+            skill3ActivationMarker.color = Color.clear;
         }
         /// <summary>
         /// Clearly marks currently activated skill from the bar.
@@ -68,13 +92,13 @@ namespace Assets.Scripts.PlayerRemade.View
             switch (skillType)//No need to check the rest of values.
             {
                 case SkillType.First:
-                    skill1Img.color += Color.yellow;
+                    skill1ActivationMarker.color = Color.yellow;
                     break;
                 case SkillType.Second:
-                    skill2Img.color += Color.yellow;
+                    skill2ActivationMarker.color = Color.yellow;
                     break;
                 case SkillType.Third:
-                    skill3Img.color += Color.yellow;
+                    skill3ActivationMarker.color = Color.yellow;
                     break;
             }
         }
