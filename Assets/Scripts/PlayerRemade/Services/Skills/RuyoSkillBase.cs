@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.PlayerRemade.Contracts;
+﻿using Assets.Scripts.Emitters;
+using Assets.Scripts.PlayerRemade.Contracts;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
 using Assets.Scripts.PlayerRemade.Services.Projectiles;
@@ -20,6 +21,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public float SkillCurrCD { get; set; }
         public Sprite SkillCrosshair { get; set; }
         public GameObject Projectile { get; set; }
+
+        private IParticleEmitter emitter;
 
         public Sprite icon
         {
@@ -49,7 +52,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
 
         public void Start()
         {
-
+            emitter = GetComponentInChildren<IParticleEmitter>();
         }
         public void UseSkill(Vector2 dirVector, Teams teamTag, Vector2 playerSpeed)
         {
@@ -64,12 +67,12 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             RuyoProjectileBasicData projData = newProjectile.GetComponent<RuyoProjectileBasicData>();
             destroyByTime.SetLifeTime(projData.SkillDuration);
 
+            emitter?.AssignParent(newProjectile.transform);
 
             IProjectileMover mover = newProjectile.GetComponent<ProjectileMover>();
             mover.Initialize();
             mover.SetMoveDirection(dirVector, playerSpeed);
-
-            //Instantiate(newProjectile);
+            
 
             StartSkillCD();
         }
