@@ -208,7 +208,7 @@ Transform:
   m_GameObject: {fileID: 1446276395325844484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.982, y: 1.446, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 1660676505314811262}
   m_Father: {fileID: 0}
@@ -274,8 +274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17134b08baa53c04485eb451c2789428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _crosshair: {fileID: 0}
   _cameraWorks: {fileID: 3123985637821774038}
+  _factorySelectorPrefab: {fileID: 882217161256122611, guid: 36b03311fcdc7464cad4e86893c3190a,
+    type: 3}
 --- !u!114 &3123985637821774038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,8 +302,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58fbbb977a1a2834982a41aac1de6392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RuyoCharacter: {fileID: 0}
-  _characterLocalScale: {x: 1, y: 1, z: 1}
+  RuyoCharacter: {fileID: 4628428597592308466, guid: 921392a8e808aa54183a08616bd6b23a,
+    type: 3}
+  _characterLocalScale: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1 &1446475872665402066
 GameObject:
   m_ObjectHideFlags: 0
