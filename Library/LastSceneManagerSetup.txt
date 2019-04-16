@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Resources/Maps/ExampleMap/Scene/singleplayermap.unity
-  isLoaded: 1
-  isActive: 1
