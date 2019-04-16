@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5642551985755724120}
   - component: {fileID: 5066550405368276042}
-  - component: {fileID: 597573984643676814}
+  - component: {fileID: 6202130313792143157}
   m_Layer: 0
   m_Name: Skill1Particle
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &597573984643676814
+--- !u!114 &6202130313792143157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3825579311976549134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c9f38607a417a746a8ef10257bd64bf, type: 3}
+  m_Script: {fileID: 11500000, guid: f1ba34aa42f1b6b43bb5ce55c5e5a418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _particleRenderer: {fileID: 5066550405368276042}

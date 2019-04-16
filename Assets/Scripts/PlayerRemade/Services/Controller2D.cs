@@ -491,13 +491,16 @@ namespace Assets.Scripts.PlayerRemade.Services
 
         void UpdateRayCastOrigins()
         {
-            Bounds bounds = collider.bounds;
-            bounds.Expand(SkinWidth * -2);
+            if (collider != null)//No idea why, but this is called right before the collider is initialized...
+            {
+                Bounds bounds = collider.bounds;
+                bounds.Expand(SkinWidth * -2);
 
-            raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
-            raycastOrigins.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
-            raycastOrigins.topLeft = new Vector2(bounds.min.x, bounds.max.y);
-            raycastOrigins.topRight = new Vector2(bounds.max.x, bounds.max.y);
+                raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
+                raycastOrigins.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
+                raycastOrigins.topLeft = new Vector2(bounds.min.x, bounds.max.y);
+                raycastOrigins.topRight = new Vector2(bounds.max.x, bounds.max.y);
+            }
         }
 	
         void CalculateRaySpacing()
