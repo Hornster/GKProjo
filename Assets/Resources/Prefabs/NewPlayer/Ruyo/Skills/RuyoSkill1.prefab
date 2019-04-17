@@ -60,5 +60,5 @@ MonoBehaviour:
   _particlePrefab: {fileID: 3825579311976549134, guid: 59c582e8c1203c046b7d740de9c4142f,
     type: 3}
   _maxLifeTime: 0.5
-  _particlesAmount: 5
+  _particlesAmount: 10
   _particlesScale: {x: 0.25, y: 0.25}
