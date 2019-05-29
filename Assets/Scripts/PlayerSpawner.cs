@@ -33,6 +33,7 @@ public class PlayerSpawner : MonoBehaviour
         if (this.player == null && this.createPlayer)
         {
             this.player = Instantiate(this.PlayerPrefab, this.gameObject.transform.position, Quaternion.identity);
+            this.player.transform.parent = this.gameObject.transform;
         }
 
         this.createPlayer = false;
