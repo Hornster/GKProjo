@@ -228,7 +228,7 @@ MonoBehaviour:
     type: 3}
   AirTilePrefab: {fileID: 3907896444312659591, guid: 23c8e095852af5341989e324ba7e99de,
     type: 3}
-  PlayerPrefab: {fileID: 1446276395325844484, guid: a8a5372a1cafa1844a3ab144fc3ae818,
+  PlayerSpawnerPrefab: {fileID: 7171956816490088630, guid: f4fdf6cecf92a2243a24bed427b478f2,
     type: 3}
 --- !u!1001 &886821364
 PrefabInstance:
