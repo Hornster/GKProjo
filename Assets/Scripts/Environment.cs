@@ -38,7 +38,7 @@ public class Environment : MonoBehaviour
         Instantiate(this.SolidTilePrefab, new Vector3(0.5f * TileUnit, 2f * TileUnit, 0), Quaternion.identity);
         Instantiate(this.SolidTilePrefab, new Vector3(1.5f * TileUnit, 2f * TileUnit, 0), Quaternion.identity);
         //
-        Instantiate(this.PlayerPrefab, Vector3.zero, Quaternion.identity);
+        Instantiate(this.PlayerPrefab, new Vector3(0.0f,5.0f,0.0f), Quaternion.identity);
     }
 
     // Update is called once per frame

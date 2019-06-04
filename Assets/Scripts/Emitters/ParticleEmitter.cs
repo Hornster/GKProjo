@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEditor.Experimental.UIElements;
 using UnityEngine;
 
 namespace Assets.Scripts.Emitters
@@ -41,6 +40,11 @@ namespace Assets.Scripts.Emitters
         private float _maxLifeTime;
         [SerializeField]
         private int _particlesAmount;
+        /// <summary>
+        /// By this factor the scale of each particle will be multiplied.
+        /// </summary>
+        [SerializeField]
+        private Vector2 _particlesScale;
 
 
         public void Start()
@@ -49,6 +53,7 @@ namespace Assets.Scripts.Emitters
             for (int i = 0; i < _particlesAmount; i++)
             {
                 var newParticle = Instantiate(_particlePrefab);
+                newParticle.transform.localScale = newParticle.transform.localScale*_particlesScale;
                 var particleController = newParticle.GetComponentInChildren<ParticleController>();
                 
                 particleController._maxLifeTime = _maxLifeTime;
