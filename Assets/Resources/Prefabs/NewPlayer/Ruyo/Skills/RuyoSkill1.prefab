@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4227307951613638236}
   - component: {fileID: 4507048104695240162}
-  - component: {fileID: 8788165569416721708}
+  - component: {fileID: 3335321385590957199}
   m_Layer: 0
   m_Name: RuyoSkill1
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcon: {fileID: 21300000, guid: a1e7e9d779516554eb19e5c3e6935a89, type: 3}
---- !u!114 &8788165569416721708
+--- !u!114 &3335321385590957199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,10 +54,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7664291158267439265}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada167ebb5a661b4599f129d265c68f1, type: 3}
+  m_Script: {fileID: 11500000, guid: d995b7642a996b745b72ab1cd5d2a78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _particlePrefab: {fileID: 3825579311976549134, guid: 59c582e8c1203c046b7d740de9c4142f,
     type: 3}
-  _maxLifeTime: 0.1
+  _maxLifeTime: 0.5
   _particlesAmount: 10
+  _particlesScale: {x: 0.25, y: 0.25}
