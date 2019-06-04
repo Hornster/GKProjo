@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -232,6 +232,9 @@ MonoBehaviour:
     type: 3}
   PlayerSpawnerPrefab: {fileID: 7171956816490088630, guid: f4fdf6cecf92a2243a24bed427b478f2,
     type: 3}
+  EnemySpawnerPrefab: {fileID: 8897525821779973545, guid: 448f3272c3f9f394e857ac670f3fa2e6,
+    type: 3}
+  DefaultMap: {fileID: 4900000, guid: e50322d1468ce504182a5f6f77b1fb1f, type: 3}
 --- !u!1001 &886821364
 PrefabInstance:
   m_ObjectHideFlags: 0

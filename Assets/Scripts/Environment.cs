@@ -15,7 +15,9 @@ public class Environment : MonoBehaviour
     public GameObject TransitionTilePrefab;
 
     public GameObject PlayerSpawnerPrefab;
-    
+
+    public GameObject EnemySpawnerPrefab;
+
     public TextAsset DefaultMap;
 
     private const float TileUnit = 0.64f;
@@ -88,6 +90,17 @@ public class Environment : MonoBehaviour
                 playerSpawner.TargetMap = mapEntity.Parameters["TargetMap"];
                 playerSpawner.TargetSpawn = mapEntity.Parameters["TargetSpawn"];
                 playerSpawner.TriggeredAction = this.LoadMap;
+            }
+            else if (mapEntity.Type == "EnemySpawner")
+            {
+                var enemySpawnerGameObject = Instantiate(
+                    this.EnemySpawnerPrefab,
+                    new Vector3((mapEntity.X + 1) * TileUnit, (mapEntity.Y + 1.5f) * TileUnit, 0),
+                    Quaternion.identity);
+                enemySpawnerGameObject.transform.parent = this.gameObject.transform;
+                var enemySpawner = enemySpawnerGameObject.GetComponent<EnemySpawner>();
+                enemySpawner.Id = mapEntity.Id;
+                 enemySpawner.SpawnEnemy();
             }
         }
     }
