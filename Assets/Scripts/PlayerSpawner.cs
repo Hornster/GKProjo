@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour
 {
-    public const int TileWidth = 2;
-
-    public const int TileHeight = 3;
-
     private bool createPlayer;
 
     private GameObject player;

@@ -14,19 +14,20 @@ namespace Assets.Scripts.PlayerRemade.Services
     /// </summary>
     public class OnCollisionGround : MonoBehaviour
     {
-
+        [SerializeField]
+        private string objectsToDestroyTags;
         private void OnTriggerEnter2D(Collider2D otherObject)
         {
             IProjectile onCollision = otherObject.GetComponent<IProjectile>();
 
             if (onCollision != null)
             {
-                if (!onCollision.CanPenetrate)
+                if (!onCollision.CanPenetrate && otherObject.tag == this.objectsToDestroyTags)
                 {
                     Destroy(otherObject.gameObject);
                 }
             }
-            else
+            else if(otherObject.tag == this.objectsToDestroyTags)
             {
                 Destroy(otherObject.gameObject);
             }

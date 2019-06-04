@@ -8,19 +8,13 @@
     [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ],
     [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ],
     [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ],
-    [ 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1 ],
+    [ 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1 ],
     [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 ],
     [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
     [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
     [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
   ],
   "Entities": [
-    {
-      "Type": "PlayerSpawner",
-      "Id": "",
-      "X": 1,
-      "Y": 1
-    },
     {
       "Type": "PlayerSpawner",
       "Id": "left",
@@ -38,7 +32,7 @@
       "X": 15,
       "Y": 2,
       "Parameters": {
-        "TargetMap": "transition",
+        "TargetMap": "default",
         "TargetSpawn": "left"
       }
     },
@@ -47,8 +41,17 @@
       "X": 0,
       "Y": 2,
       "Parameters": {
-        "TargetMap": "transition",
+        "TargetMap": "default",
         "TargetSpawn": "right"
+      }
+    },
+    {
+      "Type": "Transition",
+      "X": 0,
+      "Y": 12,
+      "Parameters": {
+        "TargetMap": "pit",
+        "TargetSpawn": "top"
       }
     }
   ]

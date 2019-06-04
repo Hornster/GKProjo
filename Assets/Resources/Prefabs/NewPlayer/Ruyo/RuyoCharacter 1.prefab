@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 8019029623107181806}
   m_Layer: 0
   m_Name: RuyoCharacter 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,8 +12,10 @@ public class Environment : MonoBehaviour
 
     public GameObject AirTilePrefab;
 
-    public GameObject PlayerSpawnerPrefab;
+    public GameObject TransitionTilePrefab;
 
+    public GameObject PlayerSpawnerPrefab;
+    
     public TextAsset DefaultMap;
 
     private const float TileUnit = 0.64f;
@@ -21,7 +23,34 @@ public class Environment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var map = JsonConvert.DeserializeObject<MapSeed>(this.DefaultMap.text);
+        LoadMap();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void LoadMap(string mapName = null, string spawnName = null)
+    {
+        TextAsset mapDescription;
+        if (mapName != null && spawnName != null)
+        {
+            mapDescription = Resources.Load<TextAsset>($"Maps/JsonMaps/{mapName}");
+        }
+        else
+        {
+            mapDescription = this.DefaultMap;
+            spawnName = string.Empty;
+        }
+
+        foreach (Transform child in this.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        var map = JsonConvert.DeserializeObject<MapSeed>(mapDescription.text);
         for (var y = 0; y < map.Tiles.Length; ++y)
         {
             for (var x = 0; x < map.Tiles[y].Length; ++x)
@@ -42,18 +71,25 @@ public class Environment : MonoBehaviour
                 playerSpawnerGameObject.transform.parent = this.gameObject.transform;
                 var playerSpawner = playerSpawnerGameObject.GetComponent<PlayerSpawner>();
                 playerSpawner.Id = mapEntity.Id;
-                if (playerSpawner.Id == string.Empty)
+                if (playerSpawner.Id == spawnName)
                 {
                     playerSpawner.SpawnPlayer();
                 }
             }
+            else if (mapEntity.Type == "Transition")
+            {
+                var playerSpawnerGameObject = Instantiate(
+                    this.TransitionTilePrefab,
+                    new Vector3(mapEntity.X * TileUnit, mapEntity.Y * TileUnit, 0),
+                    Quaternion.identity);
+                playerSpawnerGameObject.transform.parent = this.gameObject.transform;
+                var playerSpawner = playerSpawnerGameObject.GetComponent<Transition>();
+                playerSpawner.Id = mapEntity.Id;
+                playerSpawner.TargetMap = mapEntity.Parameters["TargetMap"];
+                playerSpawner.TargetSpawn = mapEntity.Parameters["TargetSpawn"];
+                playerSpawner.TriggeredAction = this.LoadMap;
+            }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public class MapSeed
@@ -71,6 +107,8 @@ public class Environment : MonoBehaviour
             public int X { get; set; }
 
             public int Y { get; set; }
+
+            public Dictionary<string, string> Parameters { get; set; }
         }
     }
 }
