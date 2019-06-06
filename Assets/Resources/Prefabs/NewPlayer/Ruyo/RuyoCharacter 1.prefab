@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2897431593650163120}
   - component: {fileID: 5525915844110288214}
   - component: {fileID: 1749797661518954039}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill3ActivationMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3337381369937768494}
   - component: {fileID: 6262222728771715183}
   - component: {fileID: 3367333050839517154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill1ActivationMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,9 +161,9 @@ GameObject:
   - component: {fileID: 2971958474396389674}
   - component: {fileID: 8019029623107181806}
   - component: {fileID: 6845433351862891039}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RuyoCharacter 1
-  m_TagString: Untagged
+  m_TagString: CharCollisionBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5733377262826792592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5733370257062053492}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SkillsBarBg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520423949968299408}
   - component: {fileID: 5655973361831096406}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520753313162307154}
   - component: {fileID: 5654325566478507384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownRightTendril 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520560367346394708}
   - component: {fileID: 5655811843765909046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 5733487209074852152}
   - component: {fileID: 5735906938045945244}
   - component: {fileID: 5555595145951370036}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill2BckGndImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,7 +627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520481314353221604}
   - component: {fileID: 5656297084138988284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513478164856141910}
   - component: {fileID: 5656500704695399266}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownLeftTendril 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 5733441371700302428}
   - component: {fileID: 5736303578440032644}
   - component: {fileID: 5655979971850148902}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,7 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520338073920483174}
   - component: {fileID: 5655769946098766016}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -958,7 +958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513479014995255414}
   - component: {fileID: 5655733936806511232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpLeftTendril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520344745511218530}
   - component: {fileID: 5654544223007713552}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,7 +1118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520366518936454694}
   - component: {fileID: 5654512263536449518}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1199,7 +1199,7 @@ GameObject:
   - component: {fileID: 5733434538845284092}
   - component: {fileID: 5736038733107022714}
   - component: {fileID: 5556114620522443914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SkillsBarBgImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1273,7 +1273,7 @@ GameObject:
   - component: {fileID: 5733844547839084564}
   - component: {fileID: 5735617432471982206}
   - component: {fileID: 5554266857343698708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill1ForeGndImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520503904454473708}
   - component: {fileID: 5654495501056891530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,7 +1427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520624508980463246}
   - component: {fileID: 5655951209641962628}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1507,7 +1507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513428481921086338}
   - component: {fileID: 5654537049283689330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpRightTendrill 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1588,7 +1588,7 @@ GameObject:
   - component: {fileID: 5733683556401970420}
   - component: {fileID: 5736127852890609236}
   - component: {fileID: 5556030937525365658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill2ForeGndImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,7 +1661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520737314356004580}
   - component: {fileID: 5654292586031023992}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftFootRunning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,7 +1741,7 @@ GameObject:
   - component: {fileID: 5733405662477680280}
   - component: {fileID: 5736407515859277272}
   - component: {fileID: 5556179541476378588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill3BckGndImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1815,7 +1815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513016651076709760}
   - component: {fileID: 5655740186600616124}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1900,7 +1900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520790806849343352}
   - component: {fileID: 5656321159084853248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftEar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,7 +1979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513014915686635468}
   - component: {fileID: 5655933467903939982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpRightTendrill 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2059,7 +2059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520489600750898132}
   - component: {fileID: 5656317868426158558}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpLeftTendrill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2139,7 +2139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513022654149579886}
   - component: {fileID: 5655848782101146006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2219,7 +2219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513182977007059800}
   - component: {fileID: 5656425447229357666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2302,7 +2302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520750754195396814}
   - component: {fileID: 5656251827890810000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2382,7 +2382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513237892490912070}
   - component: {fileID: 5656489708458143274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2462,7 +2462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513253295017688514}
   - component: {fileID: 5656342139299292646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownRightTendril  3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2542,7 +2542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520817367615532268}
   - component: {fileID: 5656216410047965824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownLeftTendril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2622,7 +2622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520807736990805462}
   - component: {fileID: 5655788423585751538}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightEar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2702,7 +2702,7 @@ GameObject:
   - component: {fileID: 5733659123182205390}
   - component: {fileID: 5735675946482321332}
   - component: {fileID: 5554280905535506540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill1BckGndImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2775,7 +2775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5733112417248771252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2812,7 +2812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520451663179621912}
   - component: {fileID: 4878452371090049937}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2856,7 +2856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513353953869098626}
   - component: {fileID: 5655993686700506502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpLeftTendril 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2936,7 +2936,7 @@ GameObject:
   - component: {fileID: 5733365305433270802}
   - component: {fileID: 5741669698623863308}
   - component: {fileID: 346788654418831134}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SkillsBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3007,7 +3007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513219142855333196}
   - component: {fileID: 5656486552067413270}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3086,7 +3086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520446587195621840}
   - component: {fileID: 5656284495511836868}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpRightTendril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3166,7 +3166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513496834193741554}
   - component: {fileID: 5656021107961280334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownRightTendril 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3244,7 +3244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5733205715194339602}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3281,7 +3281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513302691158407612}
   - component: {fileID: 5656327698285619702}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownLeftTendril 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3364,7 +3364,7 @@ GameObject:
   - component: {fileID: 5555534647071050594}
   - component: {fileID: 5554207326310555778}
   - component: {fileID: 5741131323829807452}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerInterfaceCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3473,7 +3473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520793975959340522}
   - component: {fileID: 5655790990012961964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpRightTendrill 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3552,7 +3552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513016451301539000}
   - component: {fileID: 5656275723329557354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownRightTendril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3632,7 +3632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520414404277314810}
   - component: {fileID: 5656058306044756810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3712,7 +3712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520320699087701108}
   - component: {fileID: 5655892478225949668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpLeftTendril 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3792,7 +3792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520295523033277172}
   - component: {fileID: 5656508139837354598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownLeftTendril 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3872,7 +3872,7 @@ GameObject:
   - component: {fileID: 5520783682890116938}
   - component: {fileID: 5656493395227963016}
   - component: {fileID: 2241650920620174592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3965,7 +3965,7 @@ GameObject:
   - component: {fileID: 5512998647164076626}
   - component: {fileID: 5610692360898335856}
   - component: {fileID: 5152134786749296322}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4031,7 +4031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520402861927130076}
   - component: {fileID: 5656026755657366554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4112,7 +4112,7 @@ GameObject:
   - component: {fileID: 5734100897604035170}
   - component: {fileID: 5736064216251665288}
   - component: {fileID: 5556229881126420002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill3ForeGndImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4185,7 +4185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520384619526167992}
   - component: {fileID: 5656412821766933562}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4265,7 +4265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5520595643893552768}
   - component: {fileID: 5654307775174099386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4346,7 +4346,7 @@ GameObject:
   - component: {fileID: 6751770130437913067}
   - component: {fileID: 3173152540234417552}
   - component: {fileID: 8730414882437607634}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skill2ActivationMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -88,6 +88,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.Projectile = _skillBaseProjectile;
             newSkill.skillType = SkillType.Basic;
             newSkill.shotSpawner = shotSpawner;
+            newSkill.GameObject = projectile;
 
             return newSkill;
         }
@@ -108,6 +109,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.Projectile = _skill1Projectile;  
             newSkill.skillType = SkillType.First;
             newSkill.shotSpawner = shotSpawner;
+            newSkill.GameObject = skillInstance;
 
             return newSkill;
         }
@@ -127,6 +129,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.Projectile = _skill2Projectile;
             newSkill.CrosshairBounds = Skill2Crosshair.bounds;
             newSkill.skillType = SkillType.Second;
+            newSkill.GameObject = skillInstance;
 
             RuyoProjectile2Data newSkillData = newSkill.Projectile.GetComponentInChildren<RuyoProjectile2Data>();
             RuyoProjectile2Anim newSkillAnim = newSkill.Projectile.GetComponentInChildren<RuyoProjectile2Anim>();
@@ -154,6 +157,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
             newSkill.PlayerTransform = skillOwnerTransform;
             newSkill.skillType = SkillType.Third;
             newSkill.TeleportRange = TeleportationRange;
+            newSkill.GameObject = skillInstance;
 
             return newSkill;
         }
