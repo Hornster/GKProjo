@@ -309,27 +309,7 @@ public class CastRays
         //Debug
         RaycastHit2D lastHit;
         //Debug
-
-        ////Check if a ray can be cast from first (upper left) corner
-        //if (!(direction.x >= 0 && direction.y <= 0))
-        //{
-        //    (closestHit, lastHit, closestHitRayOrigin) = CastAndTestSingleRay(ref closestHit, cornersRayOrigins[0], ref closestHitRayOrigin, ref direction, (float)distance);
-        //}
-        ////Check if a ray can be cast from second (upper right) corner
-        //if (!(direction.x <= 0 && direction.y <= 0))
-        //{
-        //    (closestHit, lastHit, closestHitRayOrigin) = CastAndTestSingleRay(ref closestHit, cornersRayOrigins[1], ref closestHitRayOrigin, ref direction, (float)distance);
-        //}
-        ////Check if a ray can be cast from third (bottom right) corner
-        //if (!(direction.x <= 0 && direction.y >= 0))
-        //{
-        //    (closestHit, lastHit, closestHitRayOrigin) = CastAndTestSingleRay(ref closestHit, cornersRayOrigins[2], ref closestHitRayOrigin, ref direction, (float)distance);
-        //}
-        ////Check if a ray can be cast from fourth (bottom left) corner
-        //if (!(direction.x >= 0 && direction.y >= 0))
-        //{
-        //    (closestHit, lastHit, closestHitRayOrigin) = CastAndTestSingleRay(ref closestHit, cornersRayOrigins[3], ref closestHitRayOrigin, ref direction, (float)distance);
-        //}
+        
 
         int colorCount = 0;
         //Cast corners
