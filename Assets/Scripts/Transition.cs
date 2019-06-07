@@ -12,6 +12,8 @@ public class Transition : MonoBehaviour
     public string TargetSpawn { get; set; }
 
     public Action<string,string> TriggeredAction { get; set; }
+    [SerializeField]
+    private string PlayerTag;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class Transition : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
-        if (otherObject.tag == "Player")
+        if (otherObject.tag == PlayerTag)
         {
             this.TriggeredAction(this.TargetMap, this.TargetSpawn);
         }

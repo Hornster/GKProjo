@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Emitters\IParticleEmitter.cs" />
     <Compile Include="Assets\Scripts\Emitters\ParticleController.cs" />
     <Compile Include="Assets\Scripts\Emitters\ParticleEmitter.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Environment.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Contracts\Characters\ICharacter.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Contracts\Characters\ICharacterFactory.cs" />
@@ -125,9 +126,9 @@
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Skills\SkillFactoryRuyo.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\Services\Skills\SkillFactorySelector.cs" />
     <Compile Include="Assets\Scripts\PlayerRemade\View\SkillsBarManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\Raycasting\Model\LaserPartData.cs" />
     <Compile Include="Assets\Scripts\Raycasting\Service\CastRays.cs" />
-    <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\Transition.cs" />
     <None Include="Assets\Resources\Sprites\SkillSpritesList.txt" />
     <None Include="Assets\Resources\Animations\Characters\Ruyo\About Ruyo animations.txt" />
@@ -348,7 +349,7 @@
       <HintPath>C:/Programusy/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Users/pmatu/Desktop/Informatyka/Repozytoria/GKProjo/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Projekty/Unity/GKProjo/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Projekty/Unity/GKProjo/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
