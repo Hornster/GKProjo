@@ -129,6 +129,7 @@
     <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
     <Compile Include="Assets\Scripts\Raycasting\Model\LaserPartData.cs" />
     <Compile Include="Assets\Scripts\Raycasting\Service\CastRays.cs" />
+    <Compile Include="Assets\Scripts\TestProjectile.cs" />
     <Compile Include="Assets\Scripts\Transition.cs" />
     <None Include="Assets\Resources\Sprites\SkillSpritesList.txt" />
     <None Include="Assets\Resources\Animations\Characters\Ruyo\About Ruyo animations.txt" />

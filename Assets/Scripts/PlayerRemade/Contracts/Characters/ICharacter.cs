@@ -1,10 +1,15 @@
-﻿using Assets.Scripts.PlayerRemade.Enums;
+﻿using System;
+using Assets.Scripts.PlayerRemade.Enums;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Contracts.Characters
 {
     public interface ICharacter
     {
+        /// <summary>
+        /// When the player looses all HP, this delegate can be used to inform the outside world about that. (Observer pattern)
+        /// </summary>
+        Action CharacterDiedCallback { get; set; }
         /// <summary>
         /// Instance of the character gameobject associated with this character script.
         /// </summary>

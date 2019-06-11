@@ -136,7 +136,14 @@ namespace Assets.Scripts.PlayerRemade.Services
         }
         public bool ChkHit(IProjectile projectile)
         {
-            throw new NotImplementedException();
+            //TODO you idiot
+            if (projectile.Alignment == Teams.Enemy)
+            {
+                this._myCharacter.ReceiveHit(projectile);
+                return true;
+            }
+
+            return false;
         }
         /// <summary>
         /// Checks one single skill (if it was activated). If so, calls the _skillManager

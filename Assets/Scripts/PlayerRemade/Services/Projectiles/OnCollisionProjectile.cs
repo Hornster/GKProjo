@@ -12,24 +12,37 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
         //tag of the team that's friendly to the projectile:
         //string ownerTeamTag;
         Teams ownerTeam;
-        
-        
+
+        void Start()
+        {
+            projectile = gameObject.GetComponent<IProjectile>();
+        }
         //sets the tags required for recognizing collision type
     
         public void SetParams(Teams ownerTeam)
         {
             this.ownerTeam = ownerTeam;
         }
-        private void OnTriggerEnter(Collider other)
+        //TODO Add the projectile interface to this class for ALL Ruyo and the test projectiles.
+        private void OnTriggerEnter2D(Collider2D other)
         {
             var hit = other.gameObject;
-            IHittable hitEntity = hit.GetComponent<Player>();
+            IHittable hitEntity = hit.GetComponentInParent<Player>();
             if (hitEntity != null)
             {
-                hitEntity.ChkHit(projectile);
+                if (hitEntity.ChkHit(projectile) && !(projectile.CanPenetrate))
+                {
+                    Destroy(gameObject);//The projectile hit the player and cannot penetrate them - destroy the projectile.
+                    return;
+                }
+                
+                return;//The projectile has done no harm to player or can penetrate through them. Let it phase through
             }
-            if(!projectile.CanPenetrate)
+            //if we got here - the projectile did not hit player at all. probably hit a wall.
+            if (!projectile.CanPenetrate)
+            {
                 Destroy(gameObject);
+            }
         }
     }
 }
