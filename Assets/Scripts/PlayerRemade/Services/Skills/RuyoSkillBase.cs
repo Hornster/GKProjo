@@ -21,6 +21,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Skills
         public float SkillCurrCD { get; set; }
         public Sprite SkillCrosshair { get; set; }
         public GameObject Projectile { get; set; }
+        public GameObject GameObject { get; set; }
 
         private IParticleEmitter emitter;
 

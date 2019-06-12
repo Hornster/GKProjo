@@ -70,6 +70,7 @@ namespace Assets.Scripts.PlayerRemade.Services
             _skillManager.AddObserver(_crosshair);
             //Create the skills factory. Then retrieve the factory script and proper skill factory.
             GameObject factorySelector = Instantiate(_factorySelectorPrefab);
+            factorySelector.transform.parent = this.gameObject.transform;
             _skillFactorySelector = factorySelector.GetComponent<ISkillFactorySelector>();
             ISkillFactory skillFactory = _skillFactorySelector.SelectFactory(AvailableCharacters.Ruyo);
             //Using the provided skill factory, generate the skills for the character.
@@ -80,17 +81,21 @@ namespace Assets.Scripts.PlayerRemade.Services
             IDictionary<SkillType, Sprite> skillsIcons = new Dictionary<SkillType, Sprite>();
                 //Basic skill:
             ISkill newSkill = skillFactory.CreateSkill(SkillType.Basic, ref shotSpawnerTransform, ref playerTransform);
+            newSkill.GameObject.transform.parent = this.gameObject.transform;
             _skillManager.AddSkill(SkillType.Basic, newSkill);
             //First active skill:
             newSkill = skillFactory.CreateSkill(SkillType.First, ref shotSpawnerTransform, ref playerTransform);
+            newSkill.GameObject.transform.parent = this.gameObject.transform;
             _skillManager.AddSkill(SkillType.First, newSkill);
             skillsIcons.Add(SkillType.First, newSkill.icon);
             //Second active skill:
             newSkill = skillFactory.CreateSkill(SkillType.Second, ref shotSpawnerTransform, ref playerTransform);
+            newSkill.GameObject.transform.parent = this.gameObject.transform;
             _skillManager.AddSkill(SkillType.Second,newSkill);
             skillsIcons.Add(SkillType.Second, newSkill.icon);
             //Third active skill:
             newSkill = skillFactory.CreateSkill(SkillType.Third, ref shotSpawnerTransform, ref playerTransform);
+            newSkill.GameObject.transform.parent = this.gameObject.transform;
             _skillManager.AddSkill(SkillType.Third, newSkill);
             skillsIcons.Add(SkillType.Third, newSkill.icon);
 
@@ -131,7 +136,14 @@ namespace Assets.Scripts.PlayerRemade.Services
         }
         public bool ChkHit(IProjectile projectile)
         {
-            throw new NotImplementedException();
+            //TODO you idiot
+            if (projectile.Alignment == Teams.Enemy)
+            {
+                this._myCharacter.ReceiveHit(projectile);
+                return true;
+            }
+
+            return false;
         }
         /// <summary>
         /// Checks one single skill (if it was activated). If so, calls the _skillManager

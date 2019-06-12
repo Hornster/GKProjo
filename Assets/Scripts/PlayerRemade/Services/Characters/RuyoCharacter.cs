@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.PlayerRemade.Contracts;
+﻿using System;
+using Assets.Scripts.PlayerRemade.Contracts;
 using Assets.Scripts.PlayerRemade.Contracts.Characters;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
@@ -9,6 +10,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
     class RuyoCharacter : ICharacter
     {
         #region Members
+
+        public Action CharacterDiedCallback { get; set; }
         public GameObject CharacterInstance { get; set; }
         public Teams team { get; set; }
         public float AccelTimeAirborne { get; set; }
@@ -57,7 +60,14 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
         {
             if (projectile.Alignment != Teams.Player)
             {
+                Debug.Log($"Character hit. HP before: {this.CurrentHP}");
                 GetHit(projectile.Damage, projectile.AssignedDebuff);
+                Debug.Log($"After hit: {this.CurrentHP}");
+                if (CurrentHP <= 0.0f)
+                {
+                    Debug.Log("Character died.");
+                    CharacterDiedCallback();
+                }
             }
         }
 
@@ -101,7 +111,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
 
         private void GetHit(float damage, IDebuff appliedDebuff)
         {
-            throw new System.NotImplementedException();
+            this.CurrentHP -= damage;
         }
         #endregion
     }

@@ -38,6 +38,10 @@ namespace Assets.Scripts.PlayerRemade.Contracts.Skills
         /// </summary>
         GameObject Projectile { get; }
         /// <summary>
+        /// The gameobject which this script is attached to.
+        /// </summary>
+        GameObject GameObject { get; }
+        /// <summary>
         /// Icon assigned to this skill. Can be null.
         /// </summary>
         Sprite icon { get; }
