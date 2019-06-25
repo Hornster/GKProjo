@@ -26,31 +26,35 @@ public class SceneTransitions : MonoBehaviour
         
     }
 
-    private void PlayStartFade()
-    {
-
-    }
-
-    private IEnumerator PlayEndFade()
+    private IEnumerator ChangeSceneToPlayLevel()
     {
         _transitionAnimator.SetTrigger("end");
         yield return new WaitForSeconds(_endTransitionWaitTime);
+        SceneManager.LoadScene(_startSceneName);
+    }
+    /// <summary>
+    /// Called as callback when the user presses the exit button
+    /// </summary>
+    public void MenuLeaveButtonPressed()
+    {
+        StartCoroutine(LeaveGame());  //return value does not have to be used
     }
     /// <summary>
     /// Called as callback when the user presses the Start button in Main Menu
     /// </summary>
     public void MenuStartButtonPressed()
     {
-        PlayEndFade();
-        SceneManager.LoadScene(_startSceneName);
-        PlayStartFade();
+        StartCoroutine(ChangeSceneToPlayLevel());  //return value does not have to be used
+        
     }
     /// <summary>
     /// Called as callback when the user presses the Leave button in Main Menu
     /// </summary>
-    public void MenuLeaveButtonPressed()
+    private IEnumerator LeaveGame()
     {
-        PlayEndFade();
+        _transitionAnimator.SetTrigger("end");
+        yield return new WaitForSeconds(_endTransitionWaitTime);
+        Application.Quit();
     }
 }
 //https://www.youtube.com/watch?v=Qd2em_ts5vs
