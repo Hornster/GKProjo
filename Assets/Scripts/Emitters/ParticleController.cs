@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Emitters
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class ParticleController : MonoBehaviour
     {
         private Color _disabledColor = Color.clear;

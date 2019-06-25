@@ -9,6 +9,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Services
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Enables and disables skills, switches the crosshair graphics when skill is switched.
     /// First added skill is set as currently active.
     /// Remember to use AddObserver and to add skills.

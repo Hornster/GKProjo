@@ -10,6 +10,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Services
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Applied to ground - allows for various collision with ground effects.
     /// </summary>
     public class OnCollisionGround : MonoBehaviour

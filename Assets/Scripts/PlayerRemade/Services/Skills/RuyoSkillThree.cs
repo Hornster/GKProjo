@@ -8,6 +8,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Services.Skills
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Needs to have the CharacterColliderTag set in the editor, both on gameobject with the
     /// collider for the character body and in the script field. This allows the character to teleport
     /// without the risk of being tossed outside of the map or becoming one with the ground.

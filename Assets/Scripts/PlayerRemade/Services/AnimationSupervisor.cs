@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     class AnimationSupervisor : IObserver<IAnimationData>
     {
 

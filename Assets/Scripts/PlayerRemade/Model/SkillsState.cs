@@ -8,6 +8,9 @@ using Assets.Scripts.PlayerRemade.Enums;
 
 namespace Assets.Scripts.PlayerRemade.Model
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class SkillsState
     {
         public SkillType currentlyActiveSkill { get; set; }

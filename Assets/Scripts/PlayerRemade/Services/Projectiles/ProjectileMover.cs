@@ -3,6 +3,9 @@ using UnityEngine.Networking;
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class ProjectileMover : MonoBehaviour, IProjectileMover
     {
         private bool _isMoving = false;

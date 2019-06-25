@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.PlayerRemade.View
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class SkillsBarManager : MonoBehaviour, Contracts.IObserver<SkillsState>
     {
         #region Members

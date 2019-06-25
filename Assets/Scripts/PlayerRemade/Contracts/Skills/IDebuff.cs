@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts.PlayerRemade.Contracts.Skills
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public interface IDebuff
     {
         /// <summary>

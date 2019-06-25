@@ -10,6 +10,9 @@ using ISkill = Assets.Scripts.PlayerRemade.Contracts.Skills.ISkill;
 
 namespace Assets.Scripts.PlayerRemade.Services.Skills
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     class SkillFactoryRuyo : MonoBehaviour, ISkillFactory
     {
         //additional crosshairs - if there's a special type of crosshair fofr given skill, it's

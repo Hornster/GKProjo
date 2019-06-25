@@ -5,12 +5,15 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
-   // public class RuyoProjectile2Data : ProjectileData {
-        /// <summary>
-        /// Data for the projectile of the second skill.
-        /// The Initialize() method has to be called before any meanings of reading the data from this class.
-        /// </summary>
-        //
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    // public class RuyoProjectile2Data : ProjectileData {
+    /// <summary>
+    /// Data for the projectile of the second skill.
+    /// The Initialize() method has to be called before any meanings of reading the data from this class.
+    /// </summary>
+    //
     public class RuyoProjectile2Data : MonoBehaviour, IProjectile
     {
         [field: SerializeField]

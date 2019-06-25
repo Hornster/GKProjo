@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts.PlayerRemade.Contracts.Characters
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     interface ICharacterFactory
     {
         Vector3 CharacterLocalScale { get; set; }

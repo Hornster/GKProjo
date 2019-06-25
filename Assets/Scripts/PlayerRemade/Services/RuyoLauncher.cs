@@ -7,6 +7,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Services
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Projectile launcher for Ruyo playable character.
     /// </summary>
     public class RuyoLauncher : MonoBehaviour, ILauncher

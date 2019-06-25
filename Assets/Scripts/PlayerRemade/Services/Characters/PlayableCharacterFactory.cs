@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Characters
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class PlayableCharacterFactory : MonoBehaviour, ICharacterFactory
     {
         /// <summary>

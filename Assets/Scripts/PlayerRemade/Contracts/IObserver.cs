@@ -1,6 +1,9 @@
 ﻿namespace Assets.Scripts.PlayerRemade.Contracts
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Describes object that observes another one.
     /// </summary>
     /// <typeparam name="TObservedType">Type that is being observed by the object.</typeparam>

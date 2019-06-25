@@ -7,6 +7,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Emitters
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class ParticleEmitter : MonoBehaviour, IParticleEmitter
     {
         /// <summary>

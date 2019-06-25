@@ -1,6 +1,9 @@
 ﻿namespace Assets.Scripts.PlayerRemade.Contracts
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Determines objects that can be hit.
     /// </summary>
     public interface IHittable

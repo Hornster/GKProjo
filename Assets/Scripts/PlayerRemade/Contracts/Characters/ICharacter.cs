@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Contracts.Characters
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public interface ICharacter
     {
         /// <summary>

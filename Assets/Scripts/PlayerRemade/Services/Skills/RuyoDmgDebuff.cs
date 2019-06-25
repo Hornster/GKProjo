@@ -4,6 +4,9 @@ using Assets.Scripts.PlayerRemade.Enums;
 
 namespace Assets.Scripts.PlayerRemade.Services.Skills
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     class RuyoDmgDebuff : IDebuff
     {
         public void PerformTick(float lastFrameTime)

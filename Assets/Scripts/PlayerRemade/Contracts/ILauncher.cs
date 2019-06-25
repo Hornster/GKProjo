@@ -5,6 +5,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Contracts
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Interface for projectile launchers. Provides three methods,
     /// each for it's own skill.
     /// </summary>

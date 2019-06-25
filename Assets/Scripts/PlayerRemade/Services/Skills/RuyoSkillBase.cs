@@ -7,7 +7,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Skills
 {
-    ///
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     class RuyoSkillBase : MonoBehaviour, IDefaultSkill
     {
         #region Members

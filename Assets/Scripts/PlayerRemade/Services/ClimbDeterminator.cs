@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts.PlayerRemade.Services
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     class ClimbDeterminator
     {
         int[] signs;

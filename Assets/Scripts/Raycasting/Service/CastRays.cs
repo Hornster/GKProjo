@@ -5,7 +5,9 @@ using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Color = UnityEngine.Color;
-
+/// <summary>
+/// Made by: Kozuch Karol
+/// </summary>
 public class CastRays
 {
     private Color horizontalRaysColor = Color.blue;

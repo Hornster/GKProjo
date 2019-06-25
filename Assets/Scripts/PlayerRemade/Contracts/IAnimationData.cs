@@ -3,6 +3,9 @@
 namespace Assets.Scripts.PlayerRemade.Contracts
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Information required for the AnimationSupervisor to work.
     /// All data contained here is necessary for the animations.
     /// </summary>

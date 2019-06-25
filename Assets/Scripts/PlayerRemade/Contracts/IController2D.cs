@@ -4,6 +4,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Contracts
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Allows for processing player's input.
     /// </summary>
     interface IController2D : IObservable<IAnimationData>

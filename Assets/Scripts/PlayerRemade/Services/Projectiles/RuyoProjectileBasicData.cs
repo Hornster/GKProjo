@@ -10,7 +10,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
-    class RuyoProjectileBasicData: MonoBehaviour, IProjectile
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    class RuyoProjectileBasicData : MonoBehaviour, IProjectile
     {
         [field: SerializeField]
         public float Damage { get; set; }

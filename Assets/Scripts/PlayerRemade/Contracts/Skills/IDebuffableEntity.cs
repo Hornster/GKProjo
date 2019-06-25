@@ -4,6 +4,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Contracts.Skills
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Describes all forms of entities that can be affected by debuffs.
     /// Used to inflict changes to the entities.
     /// </summary>

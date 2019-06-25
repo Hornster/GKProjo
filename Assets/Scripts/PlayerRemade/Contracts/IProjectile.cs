@@ -4,6 +4,9 @@ using Assets.Scripts.PlayerRemade.Enums;
 namespace Assets.Scripts.PlayerRemade.Contracts
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Interface that can be used by classes that represent projectile data.
     /// </summary>
     public interface IProjectile

@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts.PlayerRemade.Model
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public struct CollisionInfo
     {
         public bool above, below, left, right;

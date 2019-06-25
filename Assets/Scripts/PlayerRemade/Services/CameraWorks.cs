@@ -3,6 +3,9 @@ using UnityEngine.Networking;
 
 namespace Assets.Scripts.PlayerRemade.Services
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class CameraWorks : MonoBehaviour {
         public Camera camera;
         readonly Vector2 defaulOffset = Vector2.zero;

@@ -4,6 +4,9 @@ using UnityEngine.UI;
 namespace Assets.Scripts.PlayerRemade.Services.Characters
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// All KeyCodes are initialized upon calling GetInstance() method.
     /// Thank C#4 xD
     /// </summary>

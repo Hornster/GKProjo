@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class ProjectileData : MonoBehaviour {
 
         public bool isLoaded = false;

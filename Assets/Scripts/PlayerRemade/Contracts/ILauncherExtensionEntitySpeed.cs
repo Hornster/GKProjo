@@ -3,6 +3,9 @@
 namespace Assets.Scripts.PlayerRemade.Contracts
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Used as extension for launchers. Adds method that allows for
     /// updating the speed of object which the launcher is assigned to.
     /// </summary>

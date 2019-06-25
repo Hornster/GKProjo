@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class OnCollisionProjectile : MonoBehaviour {
         IProjectile projectile;
         

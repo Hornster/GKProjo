@@ -7,6 +7,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Characters
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     class RuyoCharacter : ICharacter
     {
         #region Members

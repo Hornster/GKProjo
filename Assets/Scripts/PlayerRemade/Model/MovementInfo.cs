@@ -1,5 +1,8 @@
 ﻿namespace Assets.Scripts.PlayerRemade.Model
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public struct MovementInfo
     {
         public bool canDoubleJump;

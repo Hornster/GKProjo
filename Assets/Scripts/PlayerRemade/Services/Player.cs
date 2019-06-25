@@ -12,6 +12,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Services
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Main player script. Contains other components.
     /// </summary>
     public class Player : MonoBehaviour, IHittable, IGetTransform

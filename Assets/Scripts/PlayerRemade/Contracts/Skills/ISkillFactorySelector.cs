@@ -1,6 +1,9 @@
 ﻿namespace Assets.Scripts.PlayerRemade.Contracts.Skills
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Selects proper skill factory.
     /// </summary>
     public interface ISkillFactorySelector

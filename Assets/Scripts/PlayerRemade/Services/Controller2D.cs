@@ -7,6 +7,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Services
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// You need to create a collision layer and assign all obstacles to the layer and select
     /// the layer in the options of the script under the "collisionMask" property.
     /// Has to be on the player's character's gameobject.

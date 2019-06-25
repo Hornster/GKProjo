@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     interface IProjectileMover
     {
         void Initialize();

@@ -3,6 +3,9 @@
 namespace Assets.Scripts.PlayerRemade.Services
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// A script that takes care of animation control, determining which and when shall be changed.
     /// Communicate with it through public methods.
     /// </summary>

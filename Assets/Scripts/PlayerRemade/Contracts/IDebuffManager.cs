@@ -3,6 +3,9 @@
 namespace Assets.Scripts.PlayerRemade.Contracts
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Manager of negative effects that can be acquired by given entity.
     /// </summary>
     interface IDebuffManager

@@ -3,6 +3,9 @@ using UnityEngine.Networking;
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class DestroyByTime : MonoBehaviour
     {
         float lifetime;

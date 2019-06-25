@@ -7,6 +7,9 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class LaserPartData
     {
         public Vector2 StartPoint { get; set; }

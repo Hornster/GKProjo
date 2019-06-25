@@ -4,6 +4,9 @@ using UnityEngine;
 namespace Assets.Scripts.PlayerRemade.Services
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Manages the crosshair. Requires the Begin method to be run before working.
     /// </summary>
     public class Crosshair : MonoBehaviour, IObserver<Sprite> {

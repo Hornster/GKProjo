@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class RuyoProjectile2Anim : MonoBehaviour {
         /// <summary>
         /// The lightnings are spawned 2 at once, begining from the sides and comming to the middle.

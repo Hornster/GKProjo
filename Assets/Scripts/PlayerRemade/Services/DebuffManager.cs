@@ -5,6 +5,9 @@ using Assets.Scripts.PlayerRemade.Enums;
 
 namespace Assets.Scripts.PlayerRemade.Services
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     public class DebuffManager : IDebuffManager
     {
         #region Members

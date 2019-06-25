@@ -1,6 +1,9 @@
 ﻿namespace Assets.Scripts.PlayerRemade.Contracts.Skills
 {
     /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
+    /// <summary>
     /// Defines skill that will be always active when others are not.
     /// </summary>
     interface IDefaultSkill : ISkill

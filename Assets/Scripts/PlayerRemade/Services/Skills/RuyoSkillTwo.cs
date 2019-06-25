@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Skills
 {
+    /// <summary>
+    /// Made by: Kozuch Karol
+    /// </summary>
     class RuyoSkillTwo : MonoBehaviour, ISkill
     {
         #region Members
