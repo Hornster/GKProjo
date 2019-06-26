@@ -219,6 +219,12 @@ namespace Assets.Scripts.PlayerRemade.Services
         {
             return transform;
         }
+
+        public ICharacter GetCharacter()
+        {
+            return _myCharacter;
+        }
+
         #endregion
 
 
