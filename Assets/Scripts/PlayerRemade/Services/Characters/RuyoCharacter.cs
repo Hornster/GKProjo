@@ -3,6 +3,7 @@ using Assets.Scripts.PlayerRemade.Contracts;
 using Assets.Scripts.PlayerRemade.Contracts.Characters;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
+using Assets.Scripts.PlayerRemade.Services.Projectiles;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Services.Characters
@@ -69,7 +70,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
                 if (CurrentHP <= 0.0f)
                 {
                     Debug.Log("Character died.");
-                    CharacterDiedCallback();
+                    //CharacterDiedCallback();
                 }
             }
         }
