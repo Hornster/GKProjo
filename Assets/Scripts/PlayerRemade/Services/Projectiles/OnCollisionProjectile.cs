@@ -9,7 +9,8 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
     /// </summary>
     public class OnCollisionProjectile : MonoBehaviour {
         IProjectile projectile;
-        
+
+        [SerializeField] private LayerMask ignoredLayersMask;
         //how many damage (or healing) points carries the projectile
         float dmg;
         //tag of the team that's friendly to the projectile:
@@ -30,6 +31,15 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
         private void OnTriggerEnter2D(Collider2D other)
         {
             var hit = other.gameObject;
+
+            if (hit != null)
+            {
+                if ((ignoredLayersMask.value & hit.layer) != 0) //Is the detected collider assigned to any of the ignored layers?
+                {
+                    return; //If yes - return, ignoring the collision.
+                }
+            }
+
             IHittable hitEntity = hit.GetComponentInParent<Player>();
             if (hitEntity != null)
             {

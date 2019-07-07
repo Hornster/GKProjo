@@ -51,6 +51,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -62,6 +63,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -147,6 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445ad668aa491994193ee35154ebb1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredLayersMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &9065757601869210290
 MonoBehaviour:
   m_ObjectHideFlags: 0
