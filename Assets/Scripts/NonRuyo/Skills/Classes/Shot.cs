@@ -20,13 +20,13 @@ namespace Assets.Scripts.NonRuyo.Skills
 		/// <summary>
 		/// Projectile launcher ised to shoot
 		/// </summary>
-		private ProjectileLauncher2D _cannon;
+		private AbstractProjectileLauncher2D _cannon;
 
 		/// <summary>
 		/// Retrieves projetile contoller reference
 		/// </summary>
 		/// <param name="cannon">GameObject with projectile contoller</param>
-		public Shot(ProjectileLauncher2D cannon)
+		public Shot(AbstractProjectileLauncher2D cannon)
 		{
 			_cannon = cannon;
 		}
@@ -49,7 +49,7 @@ namespace Assets.Scripts.NonRuyo.Skills
 		{
 			if (InSight(target))
 			{
-				return _cannon.Launch(target.position);
+				return _cannon.Launch(target);
 			}
 			else return false;
 			

@@ -9,18 +9,17 @@ using UnityEngine;
 namespace Assets.Scripts.NonRuyo.Enemy.Drone.Sniper
 {
 	/// <summary>
-	/// Konfiguruje komponenty dla drona o dużym zasiegu
+	/// Konfiguruje komponenty dla drona 
 	/// </summary>
-	class SetupSniper : MonoBehaviour
+	class SetupDrone : MonoBehaviour
 	{
 
 		public void Start()
 		{
-			//Ustawienie radatru
 			var fovcontroller = gameObject.GetComponentInChildren<FieldOfViewController2D>();
-			fovcontroller.LayerFilter[LayerMask.NameToLayer("Player")] = true; //Szukaj na warstwie Default
+			fovcontroller.LayerFilter[LayerMask.NameToLayer("Player")] = true; 
 			fovcontroller.TrackObjectsWithTag("CharCollisionBody");
-			//
+			
 		}
 	}
 }

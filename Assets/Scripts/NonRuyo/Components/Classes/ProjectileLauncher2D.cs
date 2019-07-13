@@ -10,40 +10,15 @@ namespace Assets.Scripts.NonRuyo.Components.Projectile
 	/// <summary>
 	/// Provides capability to launch projetiles
 	/// </summary>
-	class ProjectileLauncher2D : MonoBehaviour
+	class ProjectileLauncher2D : AbstractProjectileLauncher2D
 	{
-		public float launchCooldown; //Minimal time interval between launches
-		public float projectileSpeed; //All projectiles are launched with this speed
-		public float maxLifeTime; //Max life time of launched projectiles
-		public GameObject projectilePrefab; //Prefab of launched projectiles
-		public bool directional;
-		private float _timeSinceLastLaunch;
-		private IDirectionSource2D _directionProvider;
-
-		private void Start()
-		{
-			_timeSinceLastLaunch = launchCooldown + 1; //Starts with time since last launch greater than cooldown, reason is the way of updating time since last launch
-			if(directional)
-			{
-				_directionProvider = transform.parent.GetComponent<IDirectionSource2D>();
-			}
-		}
-
-		/// <summary>
-		/// Measures time since last launch (if needed)
-		/// </summary>
-		public void Update()
-		{
-			if (_timeSinceLastLaunch < launchCooldown)
-				_timeSinceLastLaunch += Time.deltaTime;
-		}
 
 		/// <summary>
 		/// Launches single projectile
 		/// </summary>
 		/// <param name="direction">Direction towards which projectiles are launched</param>
 		/// <returns>True if launched, false otherwise</returns>
-		public bool Launch(Vector2 direction)
+		override public bool Launch(Vector2 direction)
 		{
 			if (_timeSinceLastLaunch >= launchCooldown)
 			{
@@ -61,26 +36,16 @@ namespace Assets.Scripts.NonRuyo.Components.Projectile
 					direction.Normalize();
 				}
 				projectileController.Direction = direction;
-				projectileController.Start();
+				projectileController.StartProjectile();
 				_timeSinceLastLaunch = 0;
 				return true;
 			}
 			else return false;
 		}
 
-		public Vector3? GetDirection()
+		public override bool Launch(Transform target)
 		{
-			if (directional)
-				return _directionProvider.GetDirection();
-			else
-				return null;
+			return Launch(target.position);
 		}
-
-		public Vector2 GetLaunchPosition()
-		{
-			return transform.position;
-		}
-
-
 	}
 }

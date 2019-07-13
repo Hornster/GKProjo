@@ -11,7 +11,7 @@ namespace Assets.Scripts.NonRuyo.Components
 	class TurretController : MonoBehaviour, IDirectionSource2D
 	{
 		private GameObject _player;
-		private ProjectileLauncher2D _cannon;
+		private AbstractProjectileLauncher2D _cannon;
 		private Vector2 _direction;
 
 		public float angleSpeed;
@@ -19,7 +19,7 @@ namespace Assets.Scripts.NonRuyo.Components
 		private void Start()
 		{
 			_player = GameObject.FindGameObjectWithTag("Player");
-			_cannon = GetComponentInChildren<ProjectileLauncher2D>();
+			_cannon = GetComponentInChildren<AbstractProjectileLauncher2D>();
 			_direction = (_cannon.transform.position - transform.position).normalized;
 
 		}

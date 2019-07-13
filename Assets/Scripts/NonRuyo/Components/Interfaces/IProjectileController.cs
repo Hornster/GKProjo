@@ -10,7 +10,7 @@ namespace Assets.Scripts.NonRuyo.Components.Projectile
 
 	interface IProjectileController
 	{
-		void Start();
+		void StartProjectile();
 		void UpdateProjectile();
 		void UpdateProjectileMovement();
 		void UpdateProjectileLifetime();

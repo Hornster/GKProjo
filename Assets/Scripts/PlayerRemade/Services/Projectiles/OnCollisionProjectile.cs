@@ -34,7 +34,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Projectiles
 
             if (hit != null)
             {
-                if ((ignoredLayersMask.value & hit.layer) != 0) //Is the detected collider assigned to any of the ignored layers?
+                if ((ignoredLayersMask.value & (1 << hit.layer)) != 0) //Is the detected collider assigned to any of the ignored layers?
                 {
                     return; //If yes - return, ignoring the collision.
                 }
