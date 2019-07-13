@@ -69,6 +69,12 @@
     <Compile Include="Assets\Scripts\Emitters\ParticleController.cs" />
     <Compile Include="Assets\Scripts\Emitters\ParticleEmitter.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\EnemyTrap\EnemyActivation.cs" />
+    <Compile Include="Assets\Scripts\EnemyTrap\EnemyDamageDealer.cs" />
+    <Compile Include="Assets\Scripts\EnemyTrap\EnemyDamageReceiver.cs" />
+    <Compile Include="Assets\Scripts\EnemyTrap\EnemyHPController.cs" />
+    <Compile Include="Assets\Scripts\EnemyTrap\EnemyTrapController.cs" />
+    <Compile Include="Assets\Scripts\EnemyTrap\EnemyWallBasicAttackData.cs" />
     <Compile Include="Assets\Scripts\Environment.cs" />
     <Compile Include="Assets\Scripts\NonRuyo\Components\Classes\AbstractProjectileController.cs" />
     <Compile Include="Assets\Scripts\NonRuyo\Components\Classes\AbstractProjectileLauncher2D.cs" />
