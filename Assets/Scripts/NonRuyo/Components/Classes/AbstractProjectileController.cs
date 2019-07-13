@@ -7,29 +7,35 @@ using UnityEngine;
 
 namespace Assets.Scripts.NonRuyo.Components.Projectile
 { 
+	/// <summary>
+	/// Kontroluje podstawowe parametry pocisku
+	/// </summary>
 	abstract class AbstractProjectileController : MonoBehaviour, IProjectileController
 	{
 		/// <summary>
-		/// Indicates whether projectile started moving
+		/// Wskazuje czy pocisk się porusza
 		/// </summary>
 		protected bool _started = false;
 		/// <summary>
-		/// Maximum lifetime of projectile
+		/// Czas życia w sekundach
 		/// </summary>
 		public float MaxLifetime { get; set; }
 		/// <summary>
-		/// Speed of projectile
+		/// Prędkość
 		/// </summary>
 		public float Speed { get; set; }
 		/// <summary>
-		/// Normalized direction vector
+		/// Znormalizowany wektor kierunku poruszania 
 		/// </summary>
 		public Vector2 Direction { get; set; }
 
+		/// <summary>
+		/// Licznik aktualnego czasu życia
+		/// </summary>
 		protected float _currentLifetime = 0;
 
 		/// <summary>
-		/// If movement started, updates projectile lifetime and position
+		/// Jeżeli pocisk się porusza, aktualizuje jego czas życia i ruch
 		/// </summary>
 		virtual protected void Update()
 		{
@@ -40,14 +46,14 @@ namespace Assets.Scripts.NonRuyo.Components.Projectile
 			}
 		}
 		/// <summary>
-		/// Empty
+		/// pusto
 		/// </summary>
 		virtual public void UpdateProjectile()
 		{
 
 		}
 		/// <summary>
-		/// Increases projectile lifetime and destroys it
+		/// Aktualizuje czas życia i usuwa pocisk 
 		/// </summary>
 		virtual public void UpdateProjectileLifetime()
 		{
@@ -57,12 +63,12 @@ namespace Assets.Scripts.NonRuyo.Components.Projectile
 		}
 
 		/// <summary>
-		/// Moves projectile
+		/// Przesuwa pocisk
 		/// </summary>
 		abstract public void UpdateProjectileMovement();
 
 		/// <summary>
-		/// Activates projectile
+		/// Rozpoczyna ruch pocisku
 		/// </summary>
 		virtual public void StartProjectile()
 		{

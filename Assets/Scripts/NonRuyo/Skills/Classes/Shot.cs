@@ -11,21 +11,17 @@ using UnityEngine;
 namespace Assets.Scripts.NonRuyo.Skills
 {
 	/// <summary>
-	/// Używa komponentu ProjectileLauncher2D do wystrzeliwania pocisków
+	/// Używa komponentu AbstractProjectileLauncher2D do wystrzeliwania pocisków
 	/// Rodzaje pocisków, ich szybkość itp zależy od komponentu ProjectileLauncher.
 	/// 
 	/// </summary>
 	class Shot : ISkill
 	{
 		/// <summary>
-		/// Projectile launcher ised to shoot
+		/// Wyrzutnia
 		/// </summary>
 		private AbstractProjectileLauncher2D _cannon;
 
-		/// <summary>
-		/// Retrieves projetile contoller reference
-		/// </summary>
-		/// <param name="cannon">GameObject with projectile contoller</param>
 		public Shot(AbstractProjectileLauncher2D cannon)
 		{
 			_cannon = cannon;
@@ -55,6 +51,11 @@ namespace Assets.Scripts.NonRuyo.Skills
 			
 		}
 
+		/// <summary>
+		/// Sprawdza, czy pomiędzy wyrzytnią a celem nie ma żadnych przeszkód
+		/// </summary>
+		/// <param name="target"></param>
+		/// <returns></returns>
 		private bool InSight(Transform target)
 		{
 			int layerMask = LayerMask.GetMask("Obstacle") | (1 << target.gameObject.layer);
@@ -71,9 +72,9 @@ namespace Assets.Scripts.NonRuyo.Skills
 		}
 
 		/// <summary>
-		/// Shots projectile towards specified position
+		/// Wystrzał w kierunku punktu
 		/// </summary>
-		/// <param name="position">Position to shoot at</param>
+		/// <param name="position">Cel</param>
 		/// <returns>False if unable to use skill</returns>
 		public bool Use(Vector3 position)
 		{

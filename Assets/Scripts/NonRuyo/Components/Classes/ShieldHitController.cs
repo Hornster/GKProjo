@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.NonRuyo.Components
 {
+	/// <summary>
+	/// Zarządza działaniem tarczy. Rozmiar tarczy zależy od kolidera.
+	/// </summary>
 	public class ShieldHitController : MonoBehaviour
 	{
 		private HPController _hpController;
@@ -18,6 +21,9 @@ namespace Assets.Scripts.NonRuyo.Components
 			_collider = gameObject.GetComponent<Collider2D>();
 		}
 
+		/// <summary>
+		/// Wyświetla i uaktywnia (lub na odwrót) sprite i collider tarczy w zależności od tego czy tarcza nie została znisczona
+		/// </summary>
 		private void Update()
 		{
 			if (_hpController.IsDead())

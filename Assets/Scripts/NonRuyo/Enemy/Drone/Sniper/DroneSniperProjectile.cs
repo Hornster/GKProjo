@@ -10,6 +10,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.NonRuyo.Enemy.Drone.Sniper
 {
+	/// <summary>
+	/// Dane pocisku drona z dalekim zasięgiem
+	/// </summary>
 	class DroneSniperProjectile : MonoBehaviour, IProjectile
 	{
 

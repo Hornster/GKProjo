@@ -10,6 +10,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.NonRuyo.Enemy.Drone.Homing
 {
+	/// <summary>
+	/// Dane pocisku naprowadzającego
+	/// </summary>
 	class DroneHomingProjectile : MonoBehaviour, IProjectile
 	{
 

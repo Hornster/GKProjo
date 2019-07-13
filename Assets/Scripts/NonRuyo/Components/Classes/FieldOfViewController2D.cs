@@ -15,7 +15,7 @@ namespace Assets.Scripts.NonRuyo.Components
 	class FieldOfViewController2D : MonoBehaviour
 	{
 		/// <summary>
-		/// Stores references to obejcts in detection zone
+		/// Zawiera referencje do wykrytych obiektów
 		/// </summary>
 		public List<GameObject> TrackedObjects
 		{
@@ -24,17 +24,17 @@ namespace Assets.Scripts.NonRuyo.Components
 		}
 
 		/// <summary>
-		/// Checks whether specified object is in detection range
+		/// Sprawdza, czy dany obiekt jest w polu wykrywania (porównanie referencji)
 		/// </summary>
 		/// <param name="objectToSearch"></param>
-		/// <returns>True if object found, false otherwise</returns>
+		/// <returns>true jeżeli okiekt w polu, false w przeciwnym wypadku</returns>
 		public bool IsDetected(GameObject objectToSearch)
 		{
 			if (LayerFilter[objectToSearch.layer]) //Dont search if layer is not tracked
 			{
 				foreach(var gameObject in TrackedObjects)
 				{
-					if (gameObject == objectToSearch) //TODO poprawić
+					if (gameObject == objectToSearch) 
 						return true;
 				}
 			}
@@ -42,7 +42,7 @@ namespace Assets.Scripts.NonRuyo.Components
 		}
 
 		/// <summary>
-		/// 
+		/// Zwraca true jeżeli w polu wyrywania znajdują się jakieś obiekty
 		/// </summary>
 		/// <returns></returns>
 		public bool IsDetected()
@@ -52,12 +52,12 @@ namespace Assets.Scripts.NonRuyo.Components
 		}
 
 		/// <summary>
-		/// Tags of objects to track
+		/// Zawiera listę tagów które nalezy śledzić
 		/// </summary>
 		private List<string> _tags = new List<string>();
 
 		/// <summary>
-		/// Layers on which objects will be tracked
+		/// Lista z informacjami, które warstwy należy śledzić
 		/// </summary>
 		public bool[] LayerFilter { get; set; } 
 
@@ -68,9 +68,9 @@ namespace Assets.Scripts.NonRuyo.Components
 		}
 
 		/// <summary>
-		/// Will track objects with given tag that are on available layers 
+		/// Zapisuje tag do listy tagów do śledzenia
 		/// </summary>
-		/// <param name="tag">Tag of objects that will be tracked </param>
+		/// <param name="tag"></param>
 		public void TrackObjectsWithTag(string tag)
 		{
 			if(!_tags.Exists(str => str == tag))
@@ -80,16 +80,15 @@ namespace Assets.Scripts.NonRuyo.Components
 		}
 
 		/// <summary>
-		/// Stops tracking objects with this tag
+		/// Usuwa tag z listy tagów do śledzenia
 		/// </summary>
 		public void UnregisterTag()
 		{
-			//TODO usuwanie z listy tych które tam już są
 			_tags.Remove(tag);
 		}
 
 		/// <summary>
-		/// If provided object should be tracked, return true
+		/// Sprawdzenie, czy dany obiekt spełnia warunku do klasyfikacji jako śledzony (tag i warstwa)
 		/// </summary>
 		/// <param name="gameObject"></param>
 		/// <returns></returns>
@@ -99,7 +98,7 @@ namespace Assets.Scripts.NonRuyo.Components
 		}
 
 		/// <summary>
-		/// Happens when seeked objects enetrs FOV collider. They are registered and followed since then
+		/// Zdarzenie wywoływane gdy obiekt wedźie w pole wykrywania
 		/// </summary>
 		/// <param name="collision"></param>
 		public void OnTriggerEnter2D(Collider2D collision)
@@ -111,16 +110,7 @@ namespace Assets.Scripts.NonRuyo.Components
 		}
 
 		/// <summary>
-		/// Originally this method updates objects' positions, but since references are used to teack them this is no longer neccesary
-		/// </summary>
-		/// <param name="collision"></param>
-		/*public void OnTriggerStay2D(Collider2D collision)
-		{
-			
-		}*/
-
-		/// <summary>
-		/// Stops tracking object that leaves detection zone
+		/// Przestaje śledzić obiekt kótry wyszedł poza pole wykrywania
 		/// </summary>
 		/// <param name="collision"></param>
 		public void OnTriggerExit2D(Collider2D collision)

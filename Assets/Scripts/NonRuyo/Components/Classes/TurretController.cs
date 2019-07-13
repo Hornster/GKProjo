@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.NonRuyo.Components
 {
+	/// <summary>
+	/// Kontroler wieżyczki która może się poruszać oraz posiada wyrzutnię pocisków
+	/// </summary>
 	class TurretController : MonoBehaviour, IDirectionSource2D
 	{
 		private GameObject _player;
@@ -24,15 +27,13 @@ namespace Assets.Scripts.NonRuyo.Components
 
 		}
 
+		/// <summary>
+		/// Obraca wieżyczkę w kierunku gracza
+		/// </summary>
 		private void Update()
 		{
-			/*
-			 Poprawka:
-			 Najpierw oblicza się kąt pomiędzy wektorem od wieżycxki do gracza
-			 a wektorem aktualnego kieunku
-			 POtem, jeżeli kąt ten jest mniejszy niż kąt 
-			 */
-			
+			if (angleSpeed == 0f)
+				return;
 			Vector2 vectorToPlayer = (_player.transform.position - transform.position).normalized;
 			float angleBetweenDirectionAndPlayer = Vector2.SignedAngle(_direction, vectorToPlayer);
 			float currentRotationAngle = Time.deltaTime * angleSpeed * (angleBetweenDirectionAndPlayer > 0 ? 1f : -1f);
@@ -46,6 +47,10 @@ namespace Assets.Scripts.NonRuyo.Components
 			_direction = (_cannon.transform.position - transform.position).normalized;
 		}
 
+		/// <summary>
+		/// Sprawdzenie czy wieżyczka jest zwrócona w kierunku gracza
+		/// </summary>
+		/// <returns></returns>
 		public bool PointsOnPlayer()
 		{
 			int layerMask = LayerMask.GetMask("Player");
@@ -55,6 +60,10 @@ namespace Assets.Scripts.NonRuyo.Components
 			else return false;
 		}
 
+		/// <summary>
+		/// Zwraca aktualny kierunek wieżyczki
+		/// </summary>
+		/// <returns></returns>
 		public Vector2 GetDirection()
 		{
 			return _direction;

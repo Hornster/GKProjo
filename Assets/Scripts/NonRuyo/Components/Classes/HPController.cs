@@ -8,35 +8,38 @@ using UnityEngine;
 namespace Assets.Scripts.NonRuyo.Components
 {
 	/// <summary>
-	/// Stores information about object HP and updates it over time
+	/// Zarządza stanem zdrowia obiektu
 	/// </summary>
 	class HPController : MonoBehaviour
 	{
 		/// <summary>
-		/// Maximum value of object HP
+		/// Max HP
 		/// </summary>
 		public float HPMax;
 		/// <summary>
-		/// Health point regeneration rate. Amount of HP regenerated every regen period.
+		/// Liczba punktów HP regenerowana w czasie regenInterval
 		/// </summary>
 		public float HPRegen;
 		/// <summary>
-		/// Time between HP regen updates.
+		/// Czas w sek. pomiędzy regeneracją życia
 		/// </summary>
 		public float regenInterval;
 		/// <summary>
-		/// Determines if HP can regenerate after dropping below 0
+		/// Czy HP może odnawiać się po spadku poniżej 0 (przydatne dla tarcz)
 		/// </summary>
 		public bool canRegenerateAfterDeath;
 		/// <summary>
-		/// Regeneration time delay after HP dropped below 0
+		/// Czas w sek. do rozpoczęcia regeneracji po "śmierci"
 		/// </summary>
 		public float afterDeathRegenDelay;
 
 		/// <summary>
-		/// Current HP value. Minimum value is 0f. Object with this hp value is considered dead
+		///Aktualne HP. Minimalna wartość to 0f (obiekt martwy)
 		/// </summary>
 		private float _currentHP;
+		/// <summary>
+		/// Licznik czasu regeneracji
+		/// </summary>
 		private float _timeAfterLastRegenUpdate = 0;
 
 		public void Start()
@@ -45,7 +48,7 @@ namespace Assets.Scripts.NonRuyo.Components
 		}
 
 		/// <summary>
-		/// Handles regeneration
+		/// Aktualizuje stan zdrowia
 		/// </summary>
 		public void Update()
 		{
@@ -77,6 +80,10 @@ namespace Assets.Scripts.NonRuyo.Components
 			}
 		}
 
+		/// <summary>
+		/// Zmniejsza zdrowie o zadaną wartosć
+		/// </summary>
+		/// <param name="damage"></param>
 		public void ApplyDamage(float damage)
 		{
 			_currentHP -= damage;
@@ -84,6 +91,10 @@ namespace Assets.Scripts.NonRuyo.Components
 				_currentHP = 0f;
 		} 
 
+		/// <summary>
+		/// Sprawdza, czy obiekt umarł
+		/// </summary>
+		/// <returns>True jeżeli HP ma wartość 0f, false w przecinym wypadku</returns>
 		public bool IsDead()
 		{
 			if (_currentHP == 0f)
@@ -92,6 +103,10 @@ namespace Assets.Scripts.NonRuyo.Components
 				return false;
 		}
 
+		/// <summary>
+		/// !IsDead
+		/// </summary>
+		/// <returns></returns>
 		public bool IsAlive()
 		{
 			if (_currentHP != 0f)

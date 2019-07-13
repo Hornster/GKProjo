@@ -7,14 +7,27 @@ using UnityEngine;
 
 namespace Assets.Scripts.NonRuyo.Components.Projectile
 {
+	/// <summary>
+	/// Wyrzytnia pocisków kierowanych
+	/// </summary>
 	class HomingProjectileLauncher2D : AbstractProjectileLauncher2D
 	{
+		/// <summary>
+		/// Zwraca false 
+		/// </summary>
+		/// <param name="direction"></param>
+		/// <returns></returns>
 		override public bool Launch(Vector2 direction)
 		{
 			return false;
 
 		}
 
+		/// <summary>
+		/// Jeżeli cooldown od ostatniego wystrzału minął, tworzy pocisk i nadaje mu właściwości
+		/// </summary>
+		/// <param name="target"></param>
+		/// <returns></returns>
 		public override bool Launch(Transform target)
 		{
 			if (_timeSinceLastLaunch >= launchCooldown)

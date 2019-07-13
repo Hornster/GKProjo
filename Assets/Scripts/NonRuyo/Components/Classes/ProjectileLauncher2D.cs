@@ -8,16 +8,16 @@ using UnityEngine;
 namespace Assets.Scripts.NonRuyo.Components.Projectile
 {
 	/// <summary>
-	/// Provides capability to launch projetiles
+	/// Wyrzytnia pocisków niekierowanych
 	/// </summary>
 	class ProjectileLauncher2D : AbstractProjectileLauncher2D
 	{
 
 		/// <summary>
-		/// Launches single projectile
+		/// Tworzy pocisk lecący w kierunku podanego punktu
 		/// </summary>
-		/// <param name="direction">Direction towards which projectiles are launched</param>
-		/// <returns>True if launched, false otherwise</returns>
+		/// <param name="direction">Punkt w przestrzeni będący celem</param>
+		/// <returns>True jeżeli wystrzelono pocisk, false  w przeciwnym wypadku</returns>
 		override public bool Launch(Vector2 direction)
 		{
 			if (_timeSinceLastLaunch >= launchCooldown)
@@ -43,6 +43,11 @@ namespace Assets.Scripts.NonRuyo.Components.Projectile
 			else return false;
 		}
 
+		/// <summary>
+		/// Wystrzał w kierunku obiektu, pod uwagę jest brana pozycja obiektu w momencie wywołania
+		/// </summary>
+		/// <param name="target"></param>
+		/// <returns></returns>
 		public override bool Launch(Transform target)
 		{
 			return Launch(target.position);

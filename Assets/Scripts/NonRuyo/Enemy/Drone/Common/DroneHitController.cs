@@ -9,7 +9,7 @@ using UnityEngine;
 namespace Assets.Scripts.NonRuyo.Components
 {
 	/// <summary>
-	/// Kontroluje co dzieje się z obiektem po otrzymaniu trafienia
+	/// Kontroluje co dzieje się z dronem po otrzymaniu trafienia
 	/// </summary>
 	class DroneHitController : MonoBehaviour
 	{

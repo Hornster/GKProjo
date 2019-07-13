@@ -7,27 +7,54 @@ using UnityEngine;
 
 namespace Assets.Scripts.NonRuyo.Components.Projectile
 { 
+	/// <summary>
+	/// Kontroluje tworzenie pocisków
+	/// </summary>
 	abstract class AbstractProjectileLauncher2D : MonoBehaviour
 	{
-		public float launchCooldown; //Minimal time interval between launches
-		public float projectileSpeed; //All projectiles are launched with this speed
-		public float maxLifeTime; //Max life time of launched projectiles
-		public GameObject projectilePrefab; //Prefab of launched projectiles
+		/// <summary>
+		/// Czas pomiędzy kolejnymi wystrzałami
+		/// </summary>
+		public float launchCooldown; 
+		/// <summary>
+		/// Prędkość tworzonych pocisków
+		/// </summary>
+		public float projectileSpeed;
+		/// <summary>
+		/// Czas życia pocisków
+		/// </summary>
+		public float maxLifeTime; 
+		/// <summary>
+		/// Prefab pocisku
+		/// </summary>
+		public GameObject projectilePrefab; 
+		/// <summary>
+		/// Licznik czasu od ostatniego wystrzału
+		/// </summary>
 		protected float _timeSinceLastLaunch;
+		/// <summary>
+		/// Wskazuje czy wyrzutnai pocisków jest zależna od kierunku
+		/// </summary>
 		public bool directional;
+		/// <summary>
+		/// Źródło z którego pobierany jest aktualny kierunek w którym zwrócona jest wyrzytnia (np. wieżyczka)
+		/// </summary>
 		protected IDirectionSource2D _directionProvider;
 
+		/// <summary>
+		/// Pobranie źródła kierunku
+		/// </summary>
 		protected void Start()
 		{
-			_timeSinceLastLaunch = launchCooldown + 1; //Starts with time since last launch greater than cooldown, reason is the way of updating time since last launch
+			_timeSinceLastLaunch = launchCooldown + 1; 
 			if (directional)
 			{
-				_directionProvider = transform.parent.GetComponent<IDirectionSource2D>();
+				_directionProvider = transform.parent.GetComponent<IDirectionSource2D>(); 
 			}
 		}
 
 		/// <summary>
-		/// Measures time since last launch (if needed)
+		/// Aktualizacjs czasu od ostatniego wystrzału
 		/// </summary>
 		virtual protected void Update()
 		{
@@ -35,6 +62,10 @@ namespace Assets.Scripts.NonRuyo.Components.Projectile
 				_timeSinceLastLaunch += Time.deltaTime;
 		}
 
+		/// <summary>
+		/// Sprawdza, czy wyrzytnia jest zależna od kierunku i zwraca kierunek 
+		/// </summary>
+		/// <returns>null jeżeli wyrzytnia niekierunkowa, kierunek w którym zwrócona jest wyrzutnia w przeciwnym wypadku</returns>
 		public Vector2? GetDirection()
 		{
 			if (directional)
@@ -43,12 +74,26 @@ namespace Assets.Scripts.NonRuyo.Components.Projectile
 				return null;
 		}
 
+		/// <summary>
+		/// Zwraca pozycję wyrzutni
+		/// </summary>
+		/// <returns></returns>
 		public Vector2 GetLaunchPosition()
 		{
 			return transform.position;
 		}
 
+		/// <summary>
+		/// Wystrzał w kierunku punktu
+		/// </summary>
+		/// <param name="direction"></param>
+		/// <returns></returns>
 		abstract public bool Launch(Vector2 direction);
+		/// <summary>
+		/// Wystrzał w kierunku celu
+		/// </summary>
+		/// <param name="target"></param>
+		/// <returns></returns>
 		abstract public bool Launch(Transform target);
 	}
 }

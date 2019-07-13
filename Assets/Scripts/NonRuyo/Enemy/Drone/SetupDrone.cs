@@ -13,7 +13,6 @@ namespace Assets.Scripts.NonRuyo.Enemy.Drone.Sniper
 	/// </summary>
 	class SetupDrone : MonoBehaviour
 	{
-
 		public void Start()
 		{
 			var fovcontroller = gameObject.GetComponentInChildren<FieldOfViewController2D>();
