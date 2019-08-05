@@ -1,5 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
+using Assets.Scripts.PlayerRemade.Services;
+
 using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour
@@ -30,8 +33,15 @@ public class PlayerSpawner : MonoBehaviour
         {
             this.player = Instantiate(this.PlayerPrefab, this.gameObject.transform.position, Quaternion.identity);
             this.player.transform.parent = this.gameObject.transform;
+            this.player.GetComponent<Player>().GetCharacter().CharacterDiedCallback = this.PlayerDiedCallback;
         }
 
         this.createPlayer = false;
+    }
+
+    private void PlayerDiedCallback()
+    {
+        Destroy(this.player);
+        this.createPlayer = true;
     }
 }
