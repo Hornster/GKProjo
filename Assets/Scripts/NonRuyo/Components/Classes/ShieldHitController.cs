@@ -49,7 +49,11 @@ namespace Assets.Scripts.NonRuyo.Components
 			{
 				Debug.Log("Shield");
 				_hpController.ApplyDamage(projectile.Damage);
-				Destroy(collision.gameObject);
+
+			    if (projectile.CanPenetrate == false)
+			    {
+			        Destroy(collision.gameObject);
+                }
 			}
 		}
 	}

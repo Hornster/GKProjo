@@ -54,7 +54,7 @@ namespace Assets.Scripts.PlayerRemade.Services
 
         #region Functionalities
 
-        public void Start()
+        public void Awake()
         {
             charFactory = GetComponent<PlayableCharacterFactory>();
             //Create the character.

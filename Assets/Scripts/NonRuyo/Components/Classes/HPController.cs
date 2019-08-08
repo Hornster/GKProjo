@@ -97,7 +97,7 @@ namespace Assets.Scripts.NonRuyo.Components
 		/// <returns>True jeżeli HP ma wartość 0f, false w przecinym wypadku</returns>
 		public bool IsDead()
 		{
-			if (_currentHP == 0f)
+			if (_currentHP <= 0f)
 				return true;
 			else
 				return false;
@@ -109,7 +109,7 @@ namespace Assets.Scripts.NonRuyo.Components
 		/// <returns></returns>
 		public bool IsAlive()
 		{
-			if (_currentHP != 0f)
+			if (_currentHP > 0f)
 				return true;
 			else
 				return false;

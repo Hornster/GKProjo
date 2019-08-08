@@ -70,14 +70,16 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
                 if (CurrentHP <= 0.0f)
                 {
                     Debug.Log("Character died.");
-                    //CharacterDiedCallback();
+                    Respawn();
+                    CharacterDiedCallback();
                 }
             }
         }
 
         public void Respawn()
         {
-            throw new System.NotImplementedException();
+            CurrentHP = MaxHP;
+            Debug.Log($"Character reset. Hp restored to {this.CurrentHP}");
         }
 
         public void UpdateState(float LastFrameTime)

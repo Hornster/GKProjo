@@ -32,7 +32,7 @@ public class PlayerSpawner : MonoBehaviour
         if (this.player == null && this.createPlayer)
         {
             this.player = Instantiate(this.PlayerPrefab, this.gameObject.transform.position, Quaternion.identity);
-            this.player.transform.parent = this.gameObject.transform;
+            player.transform.parent = this.gameObject.transform;
             this.player.GetComponent<Player>().GetCharacter().CharacterDiedCallback = this.PlayerDiedCallback;
         }
 
@@ -41,7 +41,12 @@ public class PlayerSpawner : MonoBehaviour
 
     private void PlayerDiedCallback()
     {
-        Destroy(this.player);
-        this.createPlayer = true;
+        ResetCharacterPosition(this.player);
+        //this.createPlayer = true;
+    }
+
+    private void ResetCharacterPosition(GameObject player)
+    {
+        player.transform.position = this.gameObject.transform.position;
     }
 }

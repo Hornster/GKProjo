@@ -32,7 +32,11 @@ namespace Assets.Scripts.NonRuyo.Components
 				if(GetComponentInChildren<ShieldHitController>().gameObject.GetComponent<HPController>().IsDead())
 				{
 					_hpController.ApplyDamage(projectile.Damage);
-					Destroy(collision.gameObject);
+				    if (projectile.CanPenetrate == false)
+				    {
+				        Destroy(collision.gameObject);
+                    }
+
 					if (_hpController.IsDead())
 					{
 						Destroy(gameObject);
