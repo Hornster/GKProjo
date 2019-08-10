@@ -19,6 +19,7 @@ namespace Assets.Scripts.PlayerRemade.Services
         /// </summary>
         AnimationController animController;
 
+        private IObserver<Vector3> _healthBarObserver;
         private MovementInfo _movementInfo;
         private CollisionInfo _collisionInfo;
         private bool _isClimbing;
@@ -39,6 +40,11 @@ namespace Assets.Scripts.PlayerRemade.Services
         #endregion
 
         #region Functionalities
+
+        public void AddHealthBarObserver(IObserver<Vector3> healthbarObserver)
+        {
+            _healthBarObserver = healthbarObserver;
+        }
         /// <summary>
         /// Performs checks for any changes in animation state.
         /// </summary>
@@ -59,7 +65,7 @@ namespace Assets.Scripts.PlayerRemade.Services
 
             if (!animController.IsHoldingWall)
             {
-                animController.IsRunning = currentVelocity.x != 0.0f;
+                animController.IsRunning = IsRunning(currentVelocity);
 
                 if (_collisionInfo.below)
                 {
@@ -89,6 +95,7 @@ namespace Assets.Scripts.PlayerRemade.Services
             {
                 playerTransform.localScale = new Vector3(Mathf.Abs(playerTransform.localScale.x), playerTransform.localScale.y, playerTransform.localScale.z);//If the player is holding a wall from left side - force rotation to left
             }
+            _healthBarObserver?.Notify(playerTransform.localScale);
             animController.IsRunningBackwards = false;
             /*if (animController.IsRunningBackwards)
             {
@@ -145,7 +152,9 @@ namespace Assets.Scripts.PlayerRemade.Services
             }
             playerTransform.localScale = new Vector3(rescaleX, playerTransform.localScale.y,
                 playerTransform.localScale.z);
-        
+            
+            _healthBarObserver?.Notify(playerTransform.localScale);
+
             SetIsRunningBackwards(shouldRunBackwards);
 
         }
@@ -238,6 +247,11 @@ namespace Assets.Scripts.PlayerRemade.Services
                         animController.CanDoubleJump = false;
                     }
                 }
+        }
+
+        private bool IsRunning(Vector2 currentVelocity)
+        {
+            return currentVelocity.x > 0.00001f || currentVelocity.x < -0.00001f;
         }
         
         #endregion

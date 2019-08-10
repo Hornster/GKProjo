@@ -5,6 +5,7 @@ using Assets.Scripts.PlayerRemade.Contracts.Characters;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
 using Assets.Scripts.PlayerRemade.Services.Characters;
+using Assets.Scripts.PlayerRemade.Services.Characters.Healthbars.Ruyo;
 using Assets.Scripts.PlayerRemade.Services.Skills;
 using Assets.Scripts.PlayerRemade.View;
 using UnityEngine;
@@ -62,13 +63,15 @@ namespace Assets.Scripts.PlayerRemade.Services
             //Assign freshly created character as child of this gameobject.
             _myCharacter.CharacterInstance.transform.parent = transform;
             //Make sure that the created character is positioned in the middle of the player gameobject.
-            _myCharacter.CharacterInstance.transform.localPosition = Vector3.zero;  
+            _myCharacter.CharacterInstance.transform.localPosition = Vector3.zero; 
             //Get the launcher from the character and store its script ref...
             _launcher = _myCharacter.CharacterInstance.GetComponentInChildren<ILauncher>();
             //...same with the crosshair + setup the camera script.
             _crosshair = _myCharacter.CharacterInstance.GetComponentInChildren<Crosshair>();
             _crosshair.Begin(_cameraWorks);
             _controller2D = _myCharacter.CharacterInstance.GetComponentInChildren<IController2D>();
+            //Get the healthbar script for the character, if it has any healthbar.
+            _myCharacter.AddHealthBarReference(GetComponentInChildren<RuyoHealthbar>());
 
             _skillManager.AddObserver(_crosshair);
             //Create the skills factory. Then retrieve the factory script and proper skill factory.

@@ -1,8 +1,10 @@
 ﻿using System;
 using Assets.Scripts.PlayerRemade.Contracts;
 using Assets.Scripts.PlayerRemade.Contracts.Characters;
+using Assets.Scripts.PlayerRemade.Contracts.Characters.Healthbars;
 using Assets.Scripts.PlayerRemade.Contracts.Skills;
 using Assets.Scripts.PlayerRemade.Enums;
+using Assets.Scripts.PlayerRemade.Services.Characters.Healthbars.Ruyo;
 using Assets.Scripts.PlayerRemade.Services.Projectiles;
 using UnityEngine;
 
@@ -29,6 +31,7 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
         public float DoubleJumpFactor { get; set; }
         public AnimationController AnimationController { get; set; }
         public AnimationSupervisor AnimationSupervisor { get; set; }
+        public IHealthbar HealthBar;
 
         //DEFAULTS
         private float jumpHeight = 4f;
@@ -60,6 +63,13 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
         }
         #endregion
         #region Functionalities
+
+        public void AddHealthBarReference(IHealthbar healthBar)
+        {
+            this.HealthBar = healthBar;
+            AnimationSupervisor.AddHealthBarObserver(HealthBar);
+        }
+
         public void ReceiveHit(IProjectile projectile)
         {
             if (projectile.Alignment != Teams.Player)
@@ -80,6 +90,11 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
         {
             CurrentHP = MaxHP;
             Debug.Log($"Character reset. Hp restored to {this.CurrentHP}");
+            if (CheckIfHasHealthBar())
+            {
+                HealthBar.ResetHealthbarWidth();
+            }
+
         }
 
         public void UpdateState(float LastFrameTime)
@@ -118,6 +133,15 @@ namespace Assets.Scripts.PlayerRemade.Services.Characters
         private void GetHit(float damage, IDebuff appliedDebuff)
         {
             this.CurrentHP -= damage;
+            if (CheckIfHasHealthBar())
+            {
+                HealthBar.ChangeHealthbarWidth(this.MaxHP, this.CurrentHP);
+            }
+        }
+
+        private bool CheckIfHasHealthBar()
+        {
+            return HealthBar != null;
         }
         #endregion
     }

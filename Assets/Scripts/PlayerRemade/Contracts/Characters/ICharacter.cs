@@ -1,5 +1,7 @@
 ﻿using System;
+using Assets.Scripts.PlayerRemade.Contracts.Characters.Healthbars;
 using Assets.Scripts.PlayerRemade.Enums;
+using Assets.Scripts.PlayerRemade.Services.Characters.Healthbars.Ruyo;
 using UnityEngine;
 
 namespace Assets.Scripts.PlayerRemade.Contracts.Characters
@@ -44,6 +46,11 @@ namespace Assets.Scripts.PlayerRemade.Contracts.Characters
         /// Multiply this by JumpVelocity.
         /// </summary>
         float DoubleJumpFactor { get; }
+        /// <summary>
+        /// Adds a reference to the healthbar script for Ruyo. Doesn't have to be called.
+        /// </summary>
+        /// <param name="healthBar"></param>
+        void AddHealthBarReference(IHealthbar healthBar);
         /// <summary>
         /// Called when the entity was hit by a projectile.
         /// </summary>
