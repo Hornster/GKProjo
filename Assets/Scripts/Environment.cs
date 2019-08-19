@@ -10,6 +10,8 @@ public class Environment : MonoBehaviour
 
     public GameObject TransitionTilePrefab;
 
+    public GameObject VictoryTilePrefab;
+
     public GameObject PlayerSpawnerPrefab;
 
     public GameObject EnemySpawnerPrefab;
@@ -87,6 +89,14 @@ public class Environment : MonoBehaviour
                 playerSpawner.TargetMap = mapEntity.Parameters["TargetMap"];
                 playerSpawner.TargetSpawn = mapEntity.Parameters["TargetSpawn"];
                 playerSpawner.TriggeredAction = this.LoadMap;
+            }
+            else if (mapEntity.Type == "Victory")
+            {
+                var playerSpawnerGameObject = Instantiate(
+                    this.VictoryTilePrefab,
+                    new Vector3(mapEntity.X * TileUnit, mapEntity.Y * TileUnit, 0),
+                    Quaternion.identity);
+                playerSpawnerGameObject.transform.parent = this.gameObject.transform;
             }
             else if (mapEntity.Type == "EnemySpawner")
             {

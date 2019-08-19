@@ -101,13 +101,9 @@
       "Y": 5
     },
     {
-      "Type": "Transition",
+      "Type": "Victory",
       "X": 64,
-      "Y": 75,
-      "Parameters": {
-        "TargetMap": "victory",
-        "TargetSpawn": "left"
-      }
+      "Y": 75
     },
     {
       "Type": "Transition",
