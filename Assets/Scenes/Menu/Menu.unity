@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -186,18 +187,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &429994382 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4754432888739642702, guid: 931d5654741046b44becd22a3f9f3cd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 4754432888582409408}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a65eb81d88a9b48ad79a5eed9c335f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1059521102
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,12 +397,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 429994382}
+      objectReference: {fileID: 4754432888582409411}
+    - target: {fileID: 4540822777344198438, guid: e0660e001fa8f9247b38f489da7eb3ca,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 4540822776389754064, guid: e0660e001fa8f9247b38f489da7eb3ca,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 429994382}
+      objectReference: {fileID: 4754432888582409410}
+    - target: {fileID: 4540822776389754064, guid: e0660e001fa8f9247b38f489da7eb3ca,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540822775704032034, guid: e0660e001fa8f9247b38f489da7eb3ca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0660e001fa8f9247b38f489da7eb3ca, type: 3}
 --- !u!1001 &4754432888582409408
@@ -423,6 +427,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4754432888739642702, guid: 931d5654741046b44becd22a3f9f3cd7,
+        type: 3}
+      propertyPath: _transitionAnimator
+      value: 
+      objectReference: {fileID: 2027643968}
     - target: {fileID: 4754432888739642701, guid: 931d5654741046b44becd22a3f9f3cd7,
         type: 3}
       propertyPath: m_Name
@@ -483,10 +492,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4754432888739642702, guid: 931d5654741046b44becd22a3f9f3cd7,
-        type: 3}
-      propertyPath: _transitionAnimator
-      value: 
-      objectReference: {fileID: 2027643968}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 931d5654741046b44becd22a3f9f3cd7, type: 3}
+--- !u!1 &4754432888582409409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4754432888739642701, guid: 931d5654741046b44becd22a3f9f3cd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 4754432888582409408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4754432888582409410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754432888582409409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4931dafa3d2a8d64b859d8bf7ae2c83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _endTransitionWaitTime: 1.5
+  _transitionAnimator: {fileID: 2027643968}
+  _startSceneName: 
+--- !u!114 &4754432888582409411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754432888582409409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e255ce7981aea84a89578b689d39772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _endTransitionWaitTime: 1.5
+  _transitionAnimator: {fileID: 2027643968}
+  _startSceneName: singleplayermap
