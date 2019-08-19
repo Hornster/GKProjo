@@ -29,7 +29,7 @@ public class Environment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void LoadMap(string mapName = null, string spawnName = null)
@@ -107,7 +107,9 @@ public class Environment : MonoBehaviour
                 enemySpawnerGameObject.transform.parent = this.gameObject.transform;
                 var enemySpawner = enemySpawnerGameObject.GetComponent<EnemySpawner>();
                 enemySpawner.Id = mapEntity.Id;
-                 enemySpawner.SpawnEnemy();
+                enemySpawner.EnemyPrefab = Resources.Load<GameObject>($"Prefabs/{mapEntity.Parameters["Enemy"]}");
+                Debug.Log(mapEntity.Parameters["Enemy"]);
+                enemySpawner.SpawnEnemy();
             }
         }
     }
@@ -156,7 +158,7 @@ public class Environment : MonoBehaviour
                 if (index > -1)
                 {
                     tempJson = json.list[index];
-                    for(var i = 0; i < tempJson.keys.Count; ++i)
+                    for (var i = 0; i < tempJson.keys.Count; ++i)
                     {
                         Parameters.Add(tempJson.keys[i], tempJson.list[i].str);
                     }

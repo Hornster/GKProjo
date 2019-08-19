@@ -31,7 +31,10 @@
       "Type": "EnemySpawner",
       "Id": "dungeon",
       "X": 7,
-      "Y": 5
+      "Y": 5,
+      "Parameters": {
+        "Enemy": "Enemies/TrapWall/enemyObject"
+      }
     },
     {
       "Type": "Transition",
