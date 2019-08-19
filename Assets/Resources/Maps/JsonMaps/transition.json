@@ -38,7 +38,7 @@
       "X": 15,
       "Y": 2,
       "Parameters": {
-        "TargetMap": "default",
+        "TargetMap": "tempelBottom",
         "TargetSpawn": "left"
       }
     },
@@ -48,7 +48,7 @@
       "Y": 2,
       "Parameters": {
         "TargetMap": "default",
-        "TargetSpawn": "right"
+        "TargetSpawn": "left"
       }
     },
     {
