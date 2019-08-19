@@ -98,16 +98,15 @@
       "Type": "EnemySpawner",
       "Id": "dungeon",
       "X": 7,
-      "Y": 5
+      "Y": 5,
+      "Parameters": {
+        "Enemy": "Enemy/Drone/Homing/DroneHoming"
+      }
     },
     {
-      "Type": "Transition",
+      "Type": "Victory",
       "X": 64,
-      "Y": 75,
-      "Parameters": {
-        "TargetMap": "victory",
-        "TargetSpawn": "left"
-      }
+      "Y": 75
     },
     {
       "Type": "Transition",

@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     private GameObject enemy;
 
-    public GameObject EnemyPrefab;
+    public GameObject EnemyPrefab { get; set; }
 
     public string Id { get; set; }
 

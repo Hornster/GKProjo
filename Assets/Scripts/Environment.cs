@@ -10,6 +10,8 @@ public class Environment : MonoBehaviour
 
     public GameObject TransitionTilePrefab;
 
+    public GameObject VictoryTilePrefab;
+
     public GameObject PlayerSpawnerPrefab;
 
     public GameObject EnemySpawnerPrefab;
@@ -27,7 +29,7 @@ public class Environment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void LoadMap(string mapName = null, string spawnName = null)
@@ -88,6 +90,14 @@ public class Environment : MonoBehaviour
                 playerSpawner.TargetSpawn = mapEntity.Parameters["TargetSpawn"];
                 playerSpawner.TriggeredAction = this.LoadMap;
             }
+            else if (mapEntity.Type == "Victory")
+            {
+                var playerSpawnerGameObject = Instantiate(
+                    this.VictoryTilePrefab,
+                    new Vector3(mapEntity.X * TileUnit, mapEntity.Y * TileUnit, 0),
+                    Quaternion.identity);
+                playerSpawnerGameObject.transform.parent = this.gameObject.transform;
+            }
             else if (mapEntity.Type == "EnemySpawner")
             {
                 var enemySpawnerGameObject = Instantiate(
@@ -97,7 +107,9 @@ public class Environment : MonoBehaviour
                 enemySpawnerGameObject.transform.parent = this.gameObject.transform;
                 var enemySpawner = enemySpawnerGameObject.GetComponent<EnemySpawner>();
                 enemySpawner.Id = mapEntity.Id;
-                 enemySpawner.SpawnEnemy();
+                enemySpawner.EnemyPrefab = Resources.Load<GameObject>($"Prefabs/{mapEntity.Parameters["Enemy"]}");
+                Debug.Log(mapEntity.Parameters["Enemy"]);
+                enemySpawner.SpawnEnemy();
             }
         }
     }
@@ -146,7 +158,7 @@ public class Environment : MonoBehaviour
                 if (index > -1)
                 {
                     tempJson = json.list[index];
-                    for(var i = 0; i < tempJson.keys.Count; ++i)
+                    for (var i = 0; i < tempJson.keys.Count; ++i)
                     {
                         Parameters.Add(tempJson.keys[i], tempJson.list[i].str);
                     }
