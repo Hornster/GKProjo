@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,7 +262,7 @@ MonoBehaviour:
     type: 3}
   TransitionTilePrefab: {fileID: 4782497279929134093, guid: a844336a5427bbc43b7cbcd7471ecf37,
     type: 3}
-  VictoryTilePrefab: {fileID: 1900767209095713729, guid: 22a9e0d819c93dc4f97c91813e35cf17,
+  VictoryTilePrefab: {fileID: 1900767209095713729, guid: 7b6ba9b06885a114cb4849b2f6c637c8,
     type: 3}
   PlayerSpawnerPrefab: {fileID: 7171956816490088630, guid: f4fdf6cecf92a2243a24bed427b478f2,
     type: 3}

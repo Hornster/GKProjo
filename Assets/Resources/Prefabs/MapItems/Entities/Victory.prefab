@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f13ea03c62963b4cae6c80e10f75650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetScene: Menu
+  TargetScene: Victory
   PlayerTag: CharCollisionBody
 --- !u!61 &8322396669480840017
 BoxCollider2D:
