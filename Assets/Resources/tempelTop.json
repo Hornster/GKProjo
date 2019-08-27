@@ -116,6 +116,749 @@
         "TargetMap": "tempelMiddle",
         "TargetSpawn": "left"
       }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 0,
+      "Y": 0,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 1,
+      "Y": 0,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 2,
+      "Y": 0,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 20,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 20,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 21,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 21,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 22,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 22,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 23,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 23,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 24,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 24,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 25,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 25,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 26,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 26,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 34,
+      "Y": 27,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 59,
+      "Y": 27,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 27,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 27,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 28,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 28,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 29,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 29,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 70,
+      "Y": 30,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 30,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 30,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 84,
+      "Y": 30,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 31,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 31,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 32,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 32,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 33,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 33,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 34,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 34,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 35,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 35,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 36,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 36,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 37,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 37,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 30,
+      "Y": 49,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 51,
+      "Y": 49,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 62,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 63,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 64,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 65,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 66,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 67,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 68,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 69,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 70,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 71,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 72,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 73,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 74,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 75,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 76,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 77,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 78,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 79,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 80,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 81,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 82,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 83,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 84,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 85,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 86,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 87,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 88,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 89,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 90,
+      "Y": 56,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 7,
+      "Y": 64,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 10,
+      "Y": 64,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 13,
+      "Y": 64,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 21,
+      "Y": 64,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 23,
+      "Y": 64,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 30,
+      "Y": 64,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 33,
+      "Y": 64,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 36,
+      "Y": 64,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 40,
+      "Y": 67,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 55,
+      "Y": 67,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 63,
+      "Y": 67,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 65,
+      "Y": 67,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 67,
+      "Y": 67,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 10,
+      "Y": 69,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 22,
+      "Y": 69,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 33,
+      "Y": 69,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 40,
+      "Y": 69,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 49,
+      "Y": 70,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 40,
+      "Y": 71,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 49,
+      "Y": 71,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 7,
+      "Y": 72,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 10,
+      "Y": 72,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 20,
+      "Y": 72,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 22,
+      "Y": 72,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 31,
+      "Y": 72,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 34,
+      "Y": 72,
+      "Parameters": { "Enemy": "Enemy/Drone/Homing/DroneHoming" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 40,
+      "Y": 73,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 40,
+      "Y": 75,
+      "Parameters": { "Enemy": "Enemy/Drone/Sniper/DroneSniper" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 55,
+      "Y": 75,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 10,
+      "Y": 78,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 21,
+      "Y": 78,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
+    },
+    {
+      "Type": "EnemySpawner",
+      "Id": "dungeon",
+      "X": 32,
+      "Y": 78,
+      "Parameters": { "Enemy": "Enemies/TrapWall/enemyObject" }
     }
+
   ]
 }

@@ -49,8 +49,12 @@ public class EnemyDamageReceiver : MonoBehaviour, IHittable
             if (projectile != null && projectile.Alignment == Teams.Player && ChkHit(projectile))
             {
                 //Apply damage from Player's projectile to the enemy
-                //hpController.ApplyDamage(projectile.Damage);
-                Destroy(other.gameObject);
+                //hpController.ApplyDamage(projectile.Damage);0
+                if (projectile.CanPenetrate == false)
+                {
+                    Destroy(other.gameObject);
+                }
+                
 
                 //If enemy is not alive anymore then clean unnecessary components
                 if (!hpController.IsAlive())
@@ -60,7 +64,7 @@ public class EnemyDamageReceiver : MonoBehaviour, IHittable
             }
         }
         //else if Enemy was not activated just Destroy incoming projectiles
-        else if (projectile!=null && projectile.Alignment == Teams.Player) Destroy(other.gameObject);
+        else if (projectile!=null && projectile.Alignment == Teams.Player && projectile.CanPenetrate == false) Destroy(other.gameObject);
     }
 
     /// <summary>

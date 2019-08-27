@@ -10,8 +10,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{3E0E70B1-4DCD-E09C-AC8E-BCA2CB4871F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -171,13 +170,7 @@
     <Compile Include="Assets\Scripts\Transition.cs" />
     <Compile Include="Assets\Scripts\Victory.cs" />
     <None Include="Assets\Resources\Animations\Characters\Ruyo\About Ruyo animations.txt" />
-    <None Include="Assets\Resources\default.json" />
-    <None Include="Assets\Resources\pit.json" />
     <None Include="Assets\Resources\Sprites\SkillSpritesList.txt" />
-    <None Include="Assets\Resources\tempelBottom.json" />
-    <None Include="Assets\Resources\tempelMiddle.json" />
-    <None Include="Assets\Resources\tempelTop.json" />
-    <None Include="Assets\Resources\transition.json" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Projekty/Unity/GKProjo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

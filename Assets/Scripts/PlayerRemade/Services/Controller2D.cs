@@ -24,9 +24,9 @@ namespace Assets.Scripts.PlayerRemade.Services
         //used for making sure that input is NOT USED because that ASSHOLE is DRUNK TO THE BOOT and detects input which is NOT PRESENT.
         const float InputPadding = 0.0005f;
 
-        public const float SkinWidth = .015f;
+        public const float SkinWidth = .03f;
         public const float MaxClimbDistanceFromWall = 0.3f;
-        public const float MinClimbDistanceFromWall = 0.01f;
+        public const float MinClimbDistanceFromWall = 0.05f;
         public int HorizontalRayCount = 6;
         public int VerticalRayCount = 4;
         public LayerMask CollisionMask;
@@ -117,7 +117,7 @@ namespace Assets.Scripts.PlayerRemade.Services
                 DescendSlope(ref timeScaledVelocity);
             }
 
-            if (timeScaledVelocity.x != 0)
+            if (IsFloatZero(timeScaledVelocity.x) == false)
             {
                 HorizontalCollisions(ref timeScaledVelocity);
             }
@@ -127,7 +127,7 @@ namespace Assets.Scripts.PlayerRemade.Services
                 ChkWallCollisions(ref timeScaledVelocity);//TODO repair the x velocity when shift pressed bug in here
             }
 
-            if (timeScaledVelocity.y != 0)
+            if (IsFloatZero(timeScaledVelocity.y) == false)
                 VerticalCollisions(ref timeScaledVelocity);
 
             movement.ResetDoubleJump(collisions);
@@ -550,6 +550,11 @@ namespace Assets.Scripts.PlayerRemade.Services
                 velocityY = 0.0f;
 
             return velocityY;
+        }
+
+        private bool IsFloatZero(float value)
+        {
+            return value < InputPadding && value > -InputPadding;
         }
 
         public void AddObserver(IObserver<IAnimationData> observer)
